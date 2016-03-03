@@ -40,25 +40,7 @@ public class Menu extends PApplet
 	
 	public void draw()
 	{
-		if(mode == "Menu")
-		{
-			background(0);
-		}
-		
-		if(mode == "Pong")
-		{
-			background(0);
-		}
-		
-		if(mode == "Snake")
-		{
-			background(0);
-		}
-		
-		if(mode == "Space Invaaders")
-		{
-			background(0);
-		}
+		background(0);
 	}
 
 	public static void main(String[] args)
