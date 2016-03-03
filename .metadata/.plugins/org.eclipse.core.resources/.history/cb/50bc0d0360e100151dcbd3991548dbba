@@ -1,0 +1,9 @@
+package Assignment;
+
+public abstract class Object {
+
+	public Object() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
