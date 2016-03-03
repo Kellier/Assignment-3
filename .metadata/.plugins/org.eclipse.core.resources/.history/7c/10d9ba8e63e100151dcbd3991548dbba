@@ -1,5 +1,7 @@
 package Assignment;
 
+import java.awt.Color;
+
 import processing.core.*;
 
 public abstract class Object 
