@@ -24,11 +24,11 @@ public abstract class Object
 		p_lives = 5;	
 	}
 	
-	public Object(float x, float y) 
+	public Object(float x, float y, int c) 
 	{
 		//Constructor chaining
 	}
-	
+
 	//Abstract methods for all classes
 	abstract void position();
 	abstract void thing();

@@ -12,7 +12,7 @@ public class Player extends Object
 	
 	public Player(float startx, float starty)
 	{
-		super(startx, starty);
+		super(startx, starty, 50);
 	}
 
 	@Override
