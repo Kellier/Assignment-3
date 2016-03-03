@@ -40,10 +40,5 @@ public class Player extends Object
 		papplet.fill(7, 29, 103);
 		papplet.rect(recta, papplet.mouseY, w, h);		
 	}
-	
-	void newgame()
-	{
-		
-	}
 
 }

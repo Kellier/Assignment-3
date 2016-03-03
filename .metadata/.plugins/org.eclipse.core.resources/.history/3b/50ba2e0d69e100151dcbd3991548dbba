@@ -32,5 +32,4 @@ public abstract class Object
 	//Abstract methods for all classes
 	abstract void position();
 	abstract void thing();
-	abstract void newgame();
 }

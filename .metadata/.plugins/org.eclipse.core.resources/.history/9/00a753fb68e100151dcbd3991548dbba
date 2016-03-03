@@ -35,10 +35,5 @@ public class Pitch extends Object
 	    papplet.line(pitchx, 0, pitchx, pitchy);
 	    papplet.line(pitchx, 350, pitchx, 400);		
 	}
-	
-	void newgame()
-	{
-		
-	}
 
 }
