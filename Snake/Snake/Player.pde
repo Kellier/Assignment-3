@@ -51,12 +51,12 @@ class Player extends Object
     
     if(pos.x > width)
     {
-      pos.x = width;
+      pos.x = 0;
     }
     
     if(pos.x < 0)
     {
-      pos.x = 0;
+      pos.x = width;
     }
    
   }
