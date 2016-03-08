@@ -16,6 +16,7 @@ abstract class Object
   Object(float x, float y, float w)
   {
     pos = new PVector(x, y);
+    move = new PVector(0, -1);
     this.w = 10;
     this.h = 40;
     score = 0;

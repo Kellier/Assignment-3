@@ -1,6 +1,6 @@
 class Player extends Object
 {
-  char move;
+  char up;
   char left;
   char right;
   
@@ -11,10 +11,10 @@ class Player extends Object
     println("In Player Default Constructor");
   }
   
-  Player(char move, char left, char right, float startx, float starty, color c)
+  Player(char up, char left, char right, float startx, float starty, color c)
   {
     super(startx, starty, 50);
-    this.move = move;
+    this.up = up;
     this.left = left;
     this.right = right;
     this.c = c;    
@@ -22,10 +22,52 @@ class Player extends Object
   
   void position()
   {
+    move.mult(speed);
     
+    if(keys[up])
+    {
+      pos.y -= speed;
+    }
+    
+    if(keys[left])
+    {
+      pos.x -= speed;
+    }
+    
+    if(keys[right])
+    {
+      pos.x += speed;
+    }
+    
+    if(pos.y > height)
+    {
+      pos.y = height;
+    }
+    
+    if(pos.y < 0)
+    {
+      pos.y = 0;
+    }
+    
+    if(pos.x > width)
+    {
+      pos.x = width;
+    }
+    
+    if(pos.x < 0)
+    {
+      pos.x = 0;
+    }
+   
   }
   
   void thing()
   {
+    pushMatrix();
+    translate(pos.x, pos.y);
+    stroke(c);
+    fill(c);
+    rect(0, 0, w, h);
+    popMatrix();
   }
 }

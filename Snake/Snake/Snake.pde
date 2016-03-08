@@ -17,11 +17,21 @@ void keyReleased()
 void setup()
 {
   size(1000, 700);
+  
+  Player ply = new Player('W', 'A', 'D', random(0, width), random(50, 650), color(58, 209, 36));
+  objects.add(ply);
 }
 
 void draw()
 {
+  background(0);
   
+  for(int i = objects.size() - 1; i >= 0; i--)
+  {
+    Object go = objects.get(i);
+    go.position();
+    go.thing();
+  }
 }
   
   
