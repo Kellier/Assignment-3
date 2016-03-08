@@ -14,11 +14,9 @@ public class Ball extends Object
 		super(papplet);
 	}
 
-	public Ball(char reset, char newg, float startx, float starty)
+	public Ball(float startx, float starty)
 	{
 		super(startx, starty);
-		this.reset = reset;
-		this.newg = newg;
 	}
 	@Override
 	void position() 
@@ -56,7 +54,7 @@ public class Ball extends Object
 	      speedx = -speedx;
 	    }
 	    
-	    
+	    /*
 	    //If pressed the game will reset the ball position
 	    if(keys[reset])
 	    {
@@ -68,6 +66,7 @@ public class Ball extends Object
 	    {
 	      newgame();
 	    }
+	    */
 	    
 	    //Increments the speed of the ball
 	    pos.x = pos.x + speedx;
