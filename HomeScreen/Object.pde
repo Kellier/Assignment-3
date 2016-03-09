@@ -17,6 +17,13 @@ abstract class Object
     pos = new PVector(x, y);
     this.w = 10;
     this.h = 100;
+    this.speedx = 8;
+    this.speedy = 8;
+    this.foodx = random(0, 333);
+    this.foody = random(200, 700);
   }
+  
+  abstract void position();
+  abstract void thing();
   
 }
