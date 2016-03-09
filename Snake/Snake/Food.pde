@@ -8,12 +8,6 @@ class Food extends Object
     println("In Food Default Constructor");
   }
   
-  Food(float startx, float starty, color c)
-  {
-    super(startx, starty, 50);
-    this.c = c;
-  }
-  
   void position()
   {
     
@@ -21,9 +15,8 @@ class Food extends Object
   
   void thing()
   {
-    pushMatrix();
-    translate(pos.x, pos.y);
-    rect(0, 0, w, w);
-    popMatrix();
+    stroke(250, 30, 10);
+    fill(250, 30, 10);
+    rect(foodx, foody, w, w);
   }
 }
