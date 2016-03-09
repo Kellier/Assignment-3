@@ -19,7 +19,7 @@ abstract class Object
     this.h = 100;
     this.speedx = 8;
     this.speedy = 8;
-    this.foodx = random(0, 333);
+    this.foodx = random(0, 330);
     this.foody = random(200, 700);
   }
   
