@@ -25,6 +25,4 @@ abstract class Object
   
   abstract void position();
   abstract void thing();
-  
-  
 }
