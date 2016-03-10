@@ -20,6 +20,8 @@ class Shooter extends Object
     this.c = c;
   }
   
+  int time = 12;
+  
   void position()
   {
     move.mult(speed);
@@ -34,6 +36,17 @@ class Shooter extends Object
       pos.x += speed;
     }
     
+    if(keys[shoot] && time > 12)
+    {
+      Bullet bullet = new Bullet();
+      bullet.pos.x = pos.x;
+      bullet.pos.y = pos.y;
+      bullet.pos.add(PVector.mult(move, 6));
+      bullet.c = c;
+      objects.add(bullet);
+      time = 0;
+    }
+    
     if(pos.x > width)
     {
       pos.x = 0;
@@ -43,6 +56,8 @@ class Shooter extends Object
     {
       pos.x = width;
     }
+    
+    time ++;
   }
   
   void thing()
