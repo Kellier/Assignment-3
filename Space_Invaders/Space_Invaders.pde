@@ -21,8 +21,11 @@ void setup()
   Shooter ply = new Shooter('A', 'D', ' ', 500, 650, color(40, 232, 23));
   objects.add(ply);
   
-  Enemy en = new Enemy(color(245, 250, 20));
-  objects.add(en);
+  for(int i = 0; i < 10; i++)
+  {
+    Enemy en = new Enemy(random(0, width), random(50, 550), color(245, 250, 20));
+    objects.add(en);
+  }
 }
 
 void draw()

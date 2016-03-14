@@ -9,34 +9,38 @@ class Enemy extends Object
     println("In Enemy Default Constructor");
   }
   
-  Enemy(color c)
+  Enemy(float startx, float starty, color c)
   {
+    super(startx, starty, 50);
     this.c = c;
   }
   
   void position()
   {
-    if(enemyx > width)
+    if(pos.x > width)
     {
       speedx = -speedx;
     }
     
-    if(enemyx < 0)
+    if(pos.x < 0)
     {
       speedx = - speedx;
     }
     
-    enemyx = enemyx + speedx;
+    pos.x = pos.x + speedx;
   }
   
   void thing()
   {
+    pushMatrix();
+    translate(pos.x, pos.y);
     stroke(c);
     line(enemyx, enemyy, enemyx - 20, enemyy - 20);
     line(enemyx - 20, enemyy - 20, enemyx - 20, enemyy + 40);
     line(enemyx - 20, enemyy + 40, enemyx, enemyy);
     line(enemyx, enemyy, enemyx + 20, enemyy - 20);
     line(enemyx + 20, enemyy - 20, enemyx + 20, enemyy + 40);
-    line(enemyx + 20, enemyy + 40, enemyx, enemyy);  
+    line(enemyx + 20, enemyy + 40, enemyx, enemyy); 
+    popMatrix();
   }
 }

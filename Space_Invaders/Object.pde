@@ -22,8 +22,8 @@ abstract class Object
     this.w = w;
     this.halfw = w * 0.5f;
     this.theta = 0.0f;
-    this.enemyx = width / 2;
-    this.enemyy = height / 7;
+    this.enemyx = 0;
+    this.enemyy = 0;
   }
   
   abstract void position();
