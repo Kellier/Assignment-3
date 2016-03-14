@@ -20,6 +20,9 @@ void setup()
   
   Shooter ply = new Shooter('A', 'D', ' ', 500, 650, color(40, 232, 23));
   objects.add(ply);
+  
+  Enemy en = new Enemy(color(245, 250, 20));
+  objects.add(en);
 }
 
 void draw()
