@@ -1,5 +1,7 @@
 class Enemy extends Object
 {
+  float speedx = 7.0f;
+  
   Enemy()
   {
     // Constructor chaining. Call a constructor in the super class
@@ -14,7 +16,17 @@ class Enemy extends Object
   
   void position()
   {
+    if(enemyx > width)
+    {
+      speedx = -speedx;
+    }
     
+    if(enemyx < 0)
+    {
+      speedx = - speedx;
+    }
+    
+    enemyx = enemyx + speedx;
   }
   
   void thing()
