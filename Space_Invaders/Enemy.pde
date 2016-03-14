@@ -5,7 +5,7 @@ class Enemy extends Object
   Enemy()
   {
     // Constructor chaining. Call a constructor in the super class
-    super(width * 0.5f, height  * 0.5f, 20);     
+    super(width * 0.5f, height  * 0.5f, 15);     
     println("In Enemy Default Constructor");
   }
   
@@ -35,12 +35,12 @@ class Enemy extends Object
     pushMatrix();
     translate(pos.x, pos.y);
     stroke(c);
-    line(enemyx, enemyy, enemyx - 20, enemyy - 20);
-    line(enemyx - 20, enemyy - 20, enemyx - 20, enemyy + 40);
-    line(enemyx - 20, enemyy + 40, enemyx, enemyy);
-    line(enemyx, enemyy, enemyx + 20, enemyy - 20);
-    line(enemyx + 20, enemyy - 20, enemyx + 20, enemyy + 40);
-    line(enemyx + 20, enemyy + 40, enemyx, enemyy); 
+    line(enemyx, enemyy, enemyx - 15, enemyy - 15);
+    line(enemyx - 15, enemyy - 15, enemyx - 15, enemyy + 30);
+    line(enemyx - 15, enemyy + 30, enemyx, enemyy);
+    line(enemyx, enemyy, enemyx + 15, enemyy - 15);
+    line(enemyx + 15, enemyy - 15, enemyx + 15, enemyy + 30);
+    line(enemyx + 15, enemyy + 30, enemyx, enemyy); 
     popMatrix();
   }
 }

@@ -2,6 +2,8 @@ ArrayList<Object> objects = new ArrayList<Object>();
 
 boolean[] keys = new boolean[512];
 
+PFont myFont;
+
 //Method to move the paddles if pressed the paddle will move
 void keyPressed()
 {
@@ -31,6 +33,16 @@ void setup()
 void draw()
 {
   background(0);
+  
+  myFont = loadFont("Arcade1.vlw");
+  
+  int s = second();
+  int m = minute();
+  
+  stroke(40, 232, 23);
+  fill(40, 232, 23);
+  textSize(20);
+  text("Time: " + m + s, 750, 50);
   
   for(int i = objects.size() - 1; i >= 0; i--)
   {

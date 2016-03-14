@@ -8,6 +8,8 @@ abstract class Object
   float enemyx, enemyy;
   float w;
   float halfw;
+  int score;
+  
   
   Object()
   {

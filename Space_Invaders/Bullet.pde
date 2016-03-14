@@ -17,9 +17,9 @@ class Bullet extends Object
   void position()
   {
     move.mult(speed);
-    pos.add(move);
+    pos.y -= speed;
     
-    if (pos.x < 0 || pos.y < 0 || pos.x > width || pos.y > height)
+    if (pos.y < 0)
     {
       objects.remove(this);
     }
