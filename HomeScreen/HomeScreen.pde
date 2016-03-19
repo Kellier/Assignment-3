@@ -11,6 +11,9 @@ void setup()
   
   H_Pong pong = new H_Pong(random(365, 665), random(300, 650), color(7, 29, 103));
   objects.add(pong);
+  
+  H_Space space = new H_Space(random(686, 980), random(300, 600), color(245, 250, 20));
+  objects.add(space);
 }
 
 void draw()

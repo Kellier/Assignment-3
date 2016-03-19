@@ -6,6 +6,7 @@ abstract class Object
   color c;
   float w, h;
   float foodx, foody;
+  float enemyx, enemyy;
   
   Object()
   {
@@ -23,6 +24,8 @@ abstract class Object
     this.wally = 450;
     this.foodx = random(0, 330);
     this.foody = random(200, 700);
+    this.enemyx = 0;
+    this.enemyy = 0;    
   }
   
   abstract void position();
