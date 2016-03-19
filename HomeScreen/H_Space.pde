@@ -44,10 +44,10 @@ class H_Space extends Object
     popMatrix();
     
     stroke(40, 232, 23);
-    line(a, b, a - 20, b + 20);
-    line(a - 20, b + 20, a, b + 10);
-    line(a, b + 10, a + 20, b + 20);
-    line(a + 20, b + 20, a, b);
+    line(a, b, a - 20, b + 30);
+    line(a - 20, b + 30, a, b + 15);
+    line(a, b + 15, a + 20, b + 30);
+    line(a + 20, b + 30, a, b);
   }
     
 }
