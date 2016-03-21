@@ -17,11 +17,11 @@ class Bullet extends Object
   void position()
   {
     move.mult(speed);
-    pos.y -= speed;
+    pos.add(move);
     
     if (pos.y < 0)
     {
-      objects.remove(this);
+      bullets.remove(this);
     }
   }
 }

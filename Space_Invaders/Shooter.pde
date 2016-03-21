@@ -41,9 +41,9 @@ class Shooter extends Object
       Bullet bullet = new Bullet();
       bullet.pos.x = pos.x;
       bullet.pos.y = pos.y;
-      bullet.pos.add(PVector.mult(move, 6));
+      bullet.pos.y -= speed;
       bullet.c = c;
-      objects.add(bullet);
+      bullets.add(bullet);
       time = 0;
     }
     
