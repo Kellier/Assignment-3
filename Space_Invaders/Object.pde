@@ -9,6 +9,7 @@ abstract class Object
   float w;
   float halfw;
   int score;
+  int health;
   
   
   Object()

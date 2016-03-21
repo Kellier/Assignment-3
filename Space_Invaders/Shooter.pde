@@ -70,5 +70,11 @@ class Shooter extends Object
     line(halfw, halfw, 0, 0);
     line(- halfw, halfw, 0, 0);
     popMatrix();
+    
+    stroke(40, 232, 23);
+    fill(40, 232, 23);
+    textSize(20);
+    text("Health: " + health, 250, 20);
+    text("Score: " + score, 500, 20);
   }
 }

@@ -47,6 +47,7 @@ void draw()
   fill(40, 232, 23);
   textSize(20);
   text("Time: " + m + s, 750, 20);
+
   
   for(int i = objects.size() - 1; i >= 0; i--)
   {
