@@ -3,6 +3,7 @@ class Shooter extends Object
   char left;
   char right;
   char shoot;
+  char newg;
   
   Shooter()
   {
@@ -11,12 +12,13 @@ class Shooter extends Object
     println("In Shooter Default Constructor");
   }
   
-  Shooter(char left, char right, char shoot, float startx, float starty, color c)
+  Shooter(char left, char right, char shoot, char newg, float startx, float starty, color c)
   {
     super(startx, starty, 50);
     this.left = left;
     this.right = right;
     this.shoot = shoot;
+    this.newg = newg;
     this.c = c;
     health = 100;
     score = 0;
@@ -44,6 +46,11 @@ class Shooter extends Object
         bullet.c = c;
         objects.add(bullet);
         time = 0;
+    }
+    
+    if(keys[newg])
+    {
+      newgame();
     }
     
     if(pos.x > width)
@@ -79,5 +86,14 @@ class Shooter extends Object
     noFill();
     ellipse(0,0,w,w);
     popMatrix();
+  }
+  
+  void newgame()
+  {
+    speed = 5.0f;
+    pos.x = 500;
+    pos.y = 650;
+    health = 100;
+    score = 0;
   }
 }

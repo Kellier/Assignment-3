@@ -69,4 +69,17 @@ class Enemy extends Object
     line(enemyx + 15, enemyy + 30, enemyx, enemyy); 
     popMatrix();
   }
+  
+  void newgame()
+  {
+    speed = 5.0f;
+    for(int i = 0; i < width; i += 1000)
+    {
+      for(int j = 50; j < 600; j += 50)
+      {
+        pos.x = random(i, width);
+        pos.y = j; 
+      }
+    }
+  }
 }

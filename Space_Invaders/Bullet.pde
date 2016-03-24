@@ -29,4 +29,9 @@ class Bullet extends Object implements EnemyHit
       objects.remove(this);
     }
   }
+  
+  void newgame()
+  {
+    speed = 10.0f;
+  }
 }

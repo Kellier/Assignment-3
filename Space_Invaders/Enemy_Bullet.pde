@@ -31,5 +31,9 @@ class Enemy_Bullet extends Object implements Hit
   {
     ply.health -= 5;
   }
-    
+  
+  void newgame()
+  {
+    speed = 10.0f;
+  }
 }
