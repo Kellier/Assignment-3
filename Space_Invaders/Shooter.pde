@@ -19,9 +19,7 @@ class Shooter extends Object
     this.shoot = shoot;
     this.c = c;
   }
-  
-  int time = 12;
-  
+   
   void position()
   {
     move.mult(speed);

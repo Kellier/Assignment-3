@@ -17,6 +17,17 @@ class Enemy extends Object
   
   void position()
   {
+    move.mult(speed);
+    
+    if(time > 30)
+    {
+      Enemy_Bullet bullet = new Enemy_Bullet();
+      bullet.pos.x = pos.x;
+      bullet.pos.y = pos.y;
+      objects.add(bullet);
+      time = 0;
+    }
+    
     if(pos.x > width)
     {
       speedx = -speedx;
@@ -28,6 +39,7 @@ class Enemy extends Object
     }
     
     pos.x = pos.x + speedx;
+    time ++;
   }
   
   void thing()
