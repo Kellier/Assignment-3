@@ -1,5 +1,4 @@
 ArrayList<Object> objects = new ArrayList<Object>();
-ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
 boolean[] keys = new boolean[512];
 
@@ -56,10 +55,4 @@ void draw()
     go.thing();
   }
   
-  for(int i = bullets.size() - 1 ; i >= 0   ;i --)
-  {
-    Bullet b = bullets.get(i);
-    b.position();
-    b.thing();
-  }
 }

@@ -38,13 +38,12 @@ class Shooter extends Object
     
     if(keys[shoot] && time > 12)
     {
-      Bullet bullet = new Bullet();
-      bullet.pos.x = pos.x;
-      bullet.pos.y = pos.y;
-      bullet.pos.y -= speed;
-      bullet.c = c;
-      bullets.add(bullet);
-      time = 0;
+        Bullet bullet = new Bullet();
+        bullet.pos.x = pos.x;
+        bullet.pos.y = pos.y;
+        bullet.c = c;
+        objects.add(bullet);
+        time = 0;
     }
     
     if(pos.x > width)
