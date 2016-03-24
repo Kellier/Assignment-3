@@ -1,4 +1,4 @@
-class Enemy_Bullet extends Object
+class Enemy_Bullet extends Object implements Hit
 {
   Enemy_Bullet()
   {
@@ -12,6 +12,7 @@ class Enemy_Bullet extends Object
     translate(pos.x, pos.y);
     line(enemyx - 15, enemyy + 30, enemyx - 15, enemyy + 25);
     line(enemyx + 15, enemyy + 30, enemyx + 15, enemyy + 25);
+    //line(0, -halfw, 0, 5);
     popMatrix(); 
   }
   
@@ -24,6 +25,11 @@ class Enemy_Bullet extends Object
     {
       objects.remove(this);
     }
-    
   }
+  
+  void applyTo(Shooter ply)
+  {
+    ply.health -= 5;
+  }
+    
 }

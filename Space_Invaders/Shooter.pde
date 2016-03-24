@@ -18,6 +18,8 @@ class Shooter extends Object
     this.right = right;
     this.shoot = shoot;
     this.c = c;
+    health = 100;
+    score = 0;
   }
    
   void position()
@@ -55,6 +57,13 @@ class Shooter extends Object
     }
     
     time ++;
+    
+        
+    stroke(40, 232, 23);
+    fill(40, 232, 23);
+    textSize(20);
+    text("Health: " + health, 250, 20);
+    text("Score: " + score, 500, 20);
   }
   
   void thing()
@@ -66,12 +75,9 @@ class Shooter extends Object
     line(0, - halfw, halfw, halfw);
     line(halfw, halfw, 0, 0);
     line(- halfw, halfw, 0, 0);
+    stroke(255);
+    noFill();
+    ellipse(0,0,w,w);
     popMatrix();
-    
-    stroke(40, 232, 23);
-    fill(40, 232, 23);
-    textSize(20);
-    text("Health: " + health, 250, 20);
-    text("Score: " + score, 500, 20);
   }
 }

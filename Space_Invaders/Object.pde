@@ -8,9 +8,9 @@ abstract class Object
   float enemyx, enemyy;
   float w;
   float halfw;
-  int score = 0;
-  int health = 100;
   int time = 12;
+  int score;
+  int health;
   
   
   Object()

@@ -55,4 +55,28 @@ void draw()
     go.thing();
   }
   
+  bulletCollision();
+}
+
+void bulletCollision()
+{
+  for(int i = objects.size()- 1; i >= 0; i--)
+  {
+    Object go = objects.get(i);
+    if(go instanceof Shooter)
+    {
+      for(int j = objects.size() - 1; j >= 0; j--)
+      {
+        Object other = objects.get(j);
+        if(other instanceof Enemy_Bullet)
+        {
+          if(go.pos.dist(other.pos) < go.halfw/2 + other.enemyy/2 + other.enemyx/2)
+          {
+            ((Hit) other).applyTo((Shooter)go);
+            objects.remove(other);
+          }
+        }
+      }
+    }
+  }   
 }
