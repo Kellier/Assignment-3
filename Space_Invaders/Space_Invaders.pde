@@ -38,16 +38,7 @@ void draw()
   background(0);
   
   myFont = loadFont("Arcade1.vlw");
-  
-  int s = second();
-  int m = minute();
-  
-  stroke(40, 232, 23);
-  fill(40, 232, 23);
-  textSize(20);
-  text("Time: " + m + s, 750, 20);
-
-  
+    
   for(int i = objects.size() - 1; i >= 0; i--)
   {
     Object go = objects.get(i);
@@ -55,10 +46,12 @@ void draw()
     go.thing();
   }
   
-  bulletCollision();
+  bulletCollision1();
+  bulletCollision2();
+  
 }
 
-void bulletCollision()
+void bulletCollision1()
 {
   for(int i = objects.size()- 1; i >= 0; i--)
   {
@@ -79,4 +72,27 @@ void bulletCollision()
       }
     }
   }   
+}
+
+void bulletCollision2()
+{
+  for(int i = objects.size() - 1; i >= 0; i --)
+  {
+    Object go = objects.get(i);
+    if(go instanceof Enemy)
+    {
+      for(int j = objects.size() - 1; j >= 0; j --)
+      {
+        Object other = objects.get(j);
+        if(other instanceof Bullet)
+        {
+          if(go.pos.dist(other.pos) < go.enemyx + go.enemyy + other.halfw)
+          {
+            ((EnemyHit) other).applyTo((Enemy)go);
+            objects.remove(other);
+          }
+        }
+      }
+    }
+  }
 }

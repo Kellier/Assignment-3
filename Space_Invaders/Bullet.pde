@@ -1,5 +1,10 @@
-class Bullet extends Object
-{   
+class Bullet extends Object implements EnemyHit
+{ 
+  void applyTo(Enemy enemy)
+  {
+    enemy.health -= 5;
+  }
+  
   Bullet()
   {
     speed = 10.0f;

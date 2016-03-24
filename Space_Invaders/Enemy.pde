@@ -13,6 +13,7 @@ class Enemy extends Object
   {
     super(startx, starty, 50);
     this.c = c;
+    health = 5;
   }
   
   void position()
@@ -36,6 +37,19 @@ class Enemy extends Object
     if(pos.x < 0)
     {
       speedx = - speedx;
+    }
+    
+    if(health <= 0)
+    {
+      objects.remove(this);
+      for(int i = 0; i < objects.size(); i++)
+      {
+        Object go = objects.get(i);
+        if(go instanceof Shooter)
+        {
+          go.score += 10;
+        }
+      }
     }
     
     pos.x = pos.x + speedx;
