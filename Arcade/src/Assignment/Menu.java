@@ -2,7 +2,7 @@ package Assignment;
 
 import java.awt.Button;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 import controlP5.*;
 
@@ -19,8 +19,7 @@ public class Menu extends PApplet
 	int a = 0;
 	
 	//Various array lists to increment different methods in classes for the draw method
-	ArrayList<Object> objects = new ArrayList<Object>();
-	ArrayList<Pitch> pitchs = new ArrayList<Pitch>();
+
 	
 	//Increment all keys for control use
 	boolean[] keys = new boolean[512];
@@ -39,17 +38,6 @@ public class Menu extends PApplet
 	
 	public void setup()
 	{
-		//Set variables for the Player 21 paddle including positions, variables for movement and color
-		Player ply = new Player(970, 290);
-		objects.add(ply);
-		
-		//Set variables for the ball including positions and color
-		Ball ball = new Ball(random(100, 900), random(0, height));
-		objects.add(ball);
-		
-		//Load pitch methods from the pitch array list
-		Pitch pitch = new Pitch(this);
-		pitchs.add(pitch);
 		  
 		//Create the buttons for the menu
 		smooth();
@@ -58,9 +46,10 @@ public class Menu extends PApplet
 		
 		//Name the buttons and set for the menu
 		cp5.addButton("Menu",0,0,0,80,19);
-		cp5.addButton("Pong",0,250,0,80,19);
-		cp5.addButton("Snake",0,500,0,80,19);
-		cp5.addButton("Space Invaders",0,750,0,80,19);
+		cp5.addButton("Instructions",0,200,0,80,19);
+		cp5.addButton("Pong",0,400,0,80,19);
+		cp5.addButton("Snake",0,600,0,80,19);
+		cp5.addButton("Space Invaders",0,800,0,80,19);
 	}
 	
 	public void settings()
@@ -75,28 +64,14 @@ public class Menu extends PApplet
 			background(0);
 		}
 		
+		if(mode == "Instructions")
+		{
+			background(0);
+		}
+		
 		if(mode == "Pong")
 		{
-			background(35, 227, 23);
-			
-		    //Load data from the array list to increment the abstract methods
-		    for(int i = objects.size() - 1; i >= 0; i--)
-		    {
-		      Object go = objects.get(i);
-		      go.position();
-		      go.thing();
-		    }
-		    
-		    //Load data from the pitch array list to set the screens
-		    for(Pitch pitch: pitchs)
-		    {
-		      pitch.position();
-		      pitch.thing();
-		    }
-		    
-		    //Call the Gamelives method
-		    GameLives();
-		    
+			background(0);
 		}
 		
 		if(mode == "Snake")
@@ -104,36 +79,12 @@ public class Menu extends PApplet
 			background(0);
 		}
 		
-		if(mode == "Space Invaaders")
+		if(mode == "Space Invaders")
 		{
 			background(0);
 		}
 	}
-	
-	//Game lives method uses Polymorphism to indicate what happens when either player loses all their lives
-	void GameLives()
-	{
-	  //Load all data from objects array list
-	  for(int i = objects.size() - 1; i >= 0; i--)
-	  {
-	    //Name the global variable
-	    Object go = objects.get(i);
-	    if(go instanceof Ball)
-	    {      
-	      //If statement to indicate what happens when player 1 loses all their lives
-	      if(go.p_lives == 0)
-	      {
-	        background(0);
-	        textAlign(CENTER, CENTER);
-	        textSize(50);
-	        fill(227, 11, 11);
-	        text("Computer Wins, You Lose Chap!!", width / 2, height / 2);
-	        text("Press N to restart", width / 2, 400);
-	      }
-	    }
-	      
-	  }
-	}
+
 
 	public static void main(String[] args)
 	{
