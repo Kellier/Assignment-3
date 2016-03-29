@@ -22,58 +22,28 @@ class Player extends Object
     this.c = c;    
   }
   
-  void moveup()
-  {
-    speedx = 0;
-    speedy = -1;
-  }
-  
-  void moveleft()
-  {
-    speedx = -1;
-    speedy = 0;
-  }
-  
-  void moveright()
-  {
-    speedx = +1;
-    speedy = 0;
-  }
-  
-  void movedown()
-  {
-    speedx = 0;
-    speedy = +1;
-  }
-  
-  
   void position()
   {
-    move.x = sin(theta);
-    move.y = - cos(theta);
+    move.mult(speed);
     
     if(keys[up])
     {
-      moveup();
-      theta -= 90.0f;
+      pos.y -= speed;
     }
     
     if(keys[left])
     {
-      moveleft();
-      theta -= 180.0f;
+      pos.x -= speed;     
     }
     
     if(keys[right])
     {
-      moveright();
-      theta += 0.f;
+      pos.x += speed;
     }
     
     if(keys[down])
     {
-      movedown();
-      theta += 270.0f;
+      pos.y += speed;
     }
     
     if(pos.y > height)
@@ -94,11 +64,7 @@ class Player extends Object
     if(pos.x < 0)
     {
       pos.x = width;
-    }
-    
-    pos.x = pos.x + speedx;
-    pos.y = pos.y + speedy;
-   
+    }   
   }
   
   void thing()
@@ -108,7 +74,7 @@ class Player extends Object
     rotate(theta);
     stroke(c);
     fill(c);
-    rect(0, 0, w, h);
+    rect(snakex, snakey, w, h);
     popMatrix();
   }
 }
