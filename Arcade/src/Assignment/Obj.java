@@ -1,6 +1,7 @@
-package Assignment;
+package assignment;
 
-import java.awt.Color;
+
+import java.util.Random;
 
 import processing.core.*;
 
@@ -14,7 +15,11 @@ public abstract class Obj
 	float enemyx, enemyy;
 	float speedx, speedy;
 	float w, h;
-	Color c;
+	
+	Random r = new Random();
+	int i1 = r.nextInt(330 - 0) + 0;
+	int i2 = r.nextInt(700 - 200) + 200;
+	
 
 	public Obj(PApplet papplet, float x, float y) 
 	{
@@ -27,12 +32,12 @@ public abstract class Obj
 	    this.speedy = 8;
 	    this.wallx = 350;
 	    this.wally = 450;
-	    this.foodx = papplet.random(0, 330);
-	    this.foody = papplet.random(200, 700);
+	    this.foodx = i1;
+	    this.foody = i2;
 	    this.enemyx = 0;
 	    this.enemyy = 0; 
 	}
-	
+
 	abstract void position();
 	abstract void thing();
 

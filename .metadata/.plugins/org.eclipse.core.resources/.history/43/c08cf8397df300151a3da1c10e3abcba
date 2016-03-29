@@ -1,0 +1,29 @@
+package Assignment;
+
+import processing.core.PApplet;
+
+public class H_Pong extends Obj
+{
+
+	public H_Pong(PApplet papplet, float x, float y) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	void position() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void thing() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

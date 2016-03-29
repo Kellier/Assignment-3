@@ -1,0 +1,14 @@
+package Assignment;
+
+public class H_Pong {
+
+	public H_Pong() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

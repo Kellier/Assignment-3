@@ -1,0 +1,14 @@
+package assignment;
+
+public class H_Snake {
+
+	public H_Snake() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

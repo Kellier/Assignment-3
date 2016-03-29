@@ -1,12 +1,14 @@
-package Assignment;
+package assignment;
 
 import java.awt.Button;
 
-//import java.util.ArrayList;
+import java.util.ArrayList;
+import java.util.Random;
 
 import controlP5.*;
 
 import processing.core.PApplet;
+import processing.core.PFont;
 
 public class Menu extends PApplet
 {	
@@ -19,7 +21,9 @@ public class Menu extends PApplet
 	int a = 0;
 	
 	//Various array lists to increment different methods in classes for the draw method
-
+	ArrayList<Obj> objs = new ArrayList<Obj>();
+	
+	PFont myFont;
 	
 	//Increment all keys for control use
 	boolean[] keys = new boolean[512];
@@ -38,7 +42,10 @@ public class Menu extends PApplet
 	
 	public void setup()
 	{
-		  
+		Random r = new Random();
+		int x1 = r.nextInt(300 - 10) + 10;
+		int y1 = r.nextInt(650 - 300) + 300;  
+		
 		//Create the buttons for the menu
 		smooth();
 		frameRate(30);
@@ -50,6 +57,9 @@ public class Menu extends PApplet
 		cp5.addButton("Pong",0,400,0,80,19);
 		cp5.addButton("Snake",0,600,0,80,19);
 		cp5.addButton("Space Invaders",0,800,0,80,19);
+		
+		H_Snake snake = new H_Snake(null, x1, y1);
+		objs.add(snake);
 	}
 	
 	public void settings()
@@ -62,6 +72,57 @@ public class Menu extends PApplet
 		if(mode == "Menu")
 		{
 			background(0);
+			
+		    myFont = loadFont("Arcade1.vlw");
+		    
+		    stroke(255);
+		    fill(255);
+		    textFont(myFont);
+		    textAlign(CENTER, CENTER);
+		    textSize(90);
+		    text("Arcade", 500, 90);
+		    
+		    stroke(255, 0, 0);
+		    fill(255, 0, 0);
+		    textFont(myFont);
+		    textAlign(CENTER, CENTER);
+		    textSize(90);
+		    text("Snake", 167, 240);
+		    
+		    stroke(245, 250, 20);
+		    fill(245, 250, 20);
+		    textFont(myFont);
+		    textAlign(CENTER, CENTER);
+		    textSize(90);
+		    text("Pong", 500, 240);
+		    
+		    stroke(40, 232, 23);
+		    fill(40, 232, 23);
+		    textFont(myFont);
+		    textAlign(CENTER, CENTER);
+		    textSize(45);
+		    text("Space", 833, 220);
+		    
+		    stroke(40, 232, 23);
+		    fill(40, 232, 23);
+		    textFont(myFont);
+		    textAlign(CENTER, CENTER);
+		    textSize(45);
+		    text("Invaders", 833, 270);
+		    
+		    stroke(255);
+		    line(0, 200, 1000, 200);
+		    line(333, 200, 333, 700);
+		    line(666, 200, 666, 700);
+		    line(0, 295, 1000, 295);
+		    
+		    for(int i = objs.size() - 1; i >= 0; i--)
+		    {
+		      Obj go = objs.get(i);
+		      go.position();
+		      go.thing();
+		    }
+		    
 		}
 		
 		if(mode == "Instructions")
