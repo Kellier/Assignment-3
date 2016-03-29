@@ -3,12 +3,13 @@ abstract class Object
   PVector pos;
   PVector move;
   float w, h;
+  float halfW, W;
   float foodx, foody;
-  float snakex, snakey;
   float theta = 0.0f;
   float speed;
   color c;
   int score;
+  int health;
   
   Object()
   {
@@ -22,11 +23,11 @@ abstract class Object
     move = new PVector(0, -1);
     this.w = 10;
     this.h = 10;
-    this.foodx = random(0, width);
-    this.foody = random(0, height);
-    this.snakex = 0;
-    this.snakey = 0;
-    this.speed = 5.0f;
+    this.foodx = 0;
+    this.foody = 0;
+    this.W = W;
+    this.halfW = W * 0.5f;
+    this.speed = 1.0f;
     score = 0;
   }
   

@@ -21,7 +21,7 @@ void setup()
   Player ply = new Player('W', 'A', 'D', 'S', random(0, width), random(50, 650), color(58, 209, 36));
   objects.add(ply);
   
-  Food fd = new Food();
+  Food fd = new Food(random(0, width), random(20, 690));
   objects.add(fd);
 }
 
@@ -34,6 +34,32 @@ void draw()
     Object go = objects.get(i);
     go.position();
     go.thing();
+  }
+  
+  SnakeCollision();
+}
+
+void SnakeCollision()
+{
+  for(int i = objects.size() - 1; i >= 0; i--)
+  {
+    Object go = objects.get(i);
+    if(go instanceof Player)
+    {
+      for(int j = objects.size() - 1; j >= 0; j--)
+      {
+        Object other = objects.get(j);
+        if(other instanceof Food)
+        {
+          if(go.pos.dist(other.pos) < go.halfW + other.foodx + other.foody)
+          {
+            ((Increase) other).applyTo((Player)go);
+            ((FoodGone) go).applyTo((Food)other);
+            objects.remove(other);
+          }
+        }
+      }
+    }
   }
 }
   

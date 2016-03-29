@@ -1,4 +1,4 @@
-class Player extends Object
+class Player extends Object implements FoodGone
 {
   char up;
   char left;
@@ -19,7 +19,8 @@ class Player extends Object
     this.left = left;
     this.right = right;
     this.down = down;
-    this.c = c;    
+    this.c = c;  
+    score = 0;
   }
   
   void position()
@@ -64,7 +65,12 @@ class Player extends Object
     if(pos.x < 0)
     {
       pos.x = width;
-    }   
+    } 
+    
+    stroke(255, 0, 0);
+    fill(255, 0, 0);
+    textSize(20);
+    text("Score: " + score, 500, 20); 
   }
   
   void thing()
@@ -74,7 +80,12 @@ class Player extends Object
     rotate(theta);
     stroke(c);
     fill(c);
-    rect(snakex, snakey, w, h);
+    rect(halfW, -halfW, w, h);
     popMatrix();
+  }
+  
+  void applyTo(Food fd)
+  {
+    fd.health -= 5;
   }
 }
