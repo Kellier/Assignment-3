@@ -51,8 +51,13 @@ void SnakeCollision()
         Object other = objects.get(j);
         if(other instanceof Food)
         {
-          if(go.pos.dist(other.pos) < go.halfW + other.foodx + other.foody)
+          float dist = go.pos.dist(other.pos);
+          println(dist);
+          println(go.halfW);
+          println(other.halfW);
+          if(dist < go.halfW + other.halfW)
           {
+            
             ((Increase) other).applyTo((Player)go);
             ((FoodGone) go).applyTo((Food)other);
             objects.remove(other);

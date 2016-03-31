@@ -25,7 +25,7 @@ abstract class Object
     this.h = 10;
     this.foodx = 0;
     this.foody = 0;
-    this.W = W;
+    this.W = w;
     this.halfW = W * 0.5f;
     this.speed = 1.0f;
     score = 0;

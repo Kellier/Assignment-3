@@ -44,7 +44,9 @@ public class Menu extends PApplet
 	{
 		Random r = new Random();
 		int x1 = r.nextInt(300 - 10) + 10;
-		int y1 = r.nextInt(650 - 300) + 300;  
+		int y1 = r.nextInt(650 - 300) + 300; 
+		int a1 = r.nextInt(665 - 365) + 365;
+
 		
 		//Create the buttons for the menu
 		smooth();
@@ -58,8 +60,11 @@ public class Menu extends PApplet
 		cp5.addButton("Snake",0,600,0,80,19);
 		cp5.addButton("Space Invaders",0,800,0,80,19);
 		
-		H_Snake snake = new H_Snake(null, x1, y1);
+		H_Snake snake = new H_Snake(this, x1, y1);
 		objs.add(snake);
+		
+		H_Pong pong = new H_Pong(this,a1 ,y1 );
+		objs.add(pong);
 	}
 	
 	public void settings()
