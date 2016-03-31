@@ -32,5 +32,10 @@ public class H_Snake extends Obj
 	    papplet.fill(250, 30, 10);
 	    papplet.rect(foodx, foody, w, w);
 	}
+	
+	void newgame()
+	{
+		
+	}
 
 }

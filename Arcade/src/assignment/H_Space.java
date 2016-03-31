@@ -52,5 +52,10 @@ public class H_Space extends Obj
 	    papplet.line(a + 20, b + 30, a, b);
 		
 	}
+	
+	void newgame()
+	{
+		
+	}
 
 }

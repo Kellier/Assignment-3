@@ -1,0 +1,104 @@
+package assignment;
+
+import processing.core.PApplet;
+import processing.core.PFont;
+
+
+public class Instructions
+{
+	PFont myFont;
+	PApplet papplet;
+
+	public Instructions(PApplet papplet) 
+	{
+		myFont = loadFont("Arcade.vlw");
+		this.papplet = papplet;
+	}
+
+	private PFont loadFont(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public void display() 
+	{
+		  papplet.stroke(255);
+		  papplet.line(0, 0, 1000, 0);
+		  papplet.line(0, 95, 1000, 95);
+		  papplet.line(333, 0, 333, 700);
+		  papplet.line(666, 0, 666, 700);
+		  
+		  papplet.stroke(255, 0, 0);
+		  papplet.fill(255, 0, 0);
+		  papplet.textFont(myFont);
+		  papplet.textAlign(papplet.CENTER, papplet.CENTER);
+		  papplet.textSize(90);
+		  papplet.text("Snake", 167, 40);
+		  papplet.textSize(45);
+		  papplet.text("Instructions:", 167, 135);
+		  papplet.textSize(30);
+		  papplet.text("W : Up", 167, 195);
+		  papplet.text("S : Down", 167, 255);
+		  papplet.text("A : Left", 167, 315);
+		  papplet.text("D : Right", 167, 375);
+		  papplet.text("R : Restart", 167, 435);
+		  papplet.text("N : New Game", 167, 495);
+		  papplet.text("Aim:", 167, 545);
+		  papplet.textSize(20);
+		  papplet.text("Grow your Snake and", 167, 575);
+		  papplet.text("last as long as", 167, 605);
+		  papplet.text("you can!", 167, 635);
+		  
+		  
+		  papplet.stroke(245, 250, 20);
+		  papplet.fill(245, 250, 20);
+		  papplet.textFont(myFont);
+		  papplet.textAlign(papplet.CENTER, papplet.CENTER);
+		  papplet.textSize(90);
+		  papplet.text("Pong", 500, 40);
+		  papplet.textSize(45);
+		  papplet.text("Instructions:", 500, 135);
+		  papplet.textSize(30);
+		  papplet.text("Mouse : Move", 500, 195);
+		  papplet.text("R : Restart", 500, 255);
+		  papplet.text("N : New Game", 500, 315);
+		  papplet.text("Aim:", 500, 365);
+		  papplet.textSize(20);
+		  papplet.text("Stop the ball from", 500, 395);
+		  papplet.text("scoring a goal", 500, 425);
+		  papplet.text("using your paddle!", 500, 455);
+		  
+		  papplet.stroke(40, 232, 23);
+		  papplet.fill(40, 232, 23);
+		  papplet.textFont(myFont);
+		  papplet.textAlign(papplet.CENTER, papplet.CENTER);
+		  papplet.textSize(45);
+		  papplet.text("Space", 833, 20);
+		  
+		  papplet.stroke(40, 232, 23);
+		  papplet.fill(40, 232, 23);
+		  papplet.textFont(myFont);
+		  papplet.textAlign(papplet.CENTER, papplet.CENTER);
+		  papplet.textSize(45);
+		  papplet.text("Invaders", 833, 70);
+		  papplet.textSize(45);
+		  papplet.text("Instructions:",  833, 135);
+		  papplet.textSize(30);
+		  papplet.text("A : Left", 833, 195);
+		  papplet.text("D : Right", 833, 255);
+		  papplet.text("Space : Shoot", 833, 315);
+		  papplet.text("R : Restart", 833, 375);
+		  papplet.text("N : New Game", 833, 435);
+		  papplet.text("Aim:", 833, 485);
+		  papplet.textSize(20);
+		  papplet.text("Avoid the enemy bullets", 833, 515);
+		  papplet.text("and last as long as", 833, 545);
+		  papplet.text("you can by shooting", 833, 575);
+		  papplet.text("the enemy ships", 833, 605);
+		
+	}
+
+
+
+}

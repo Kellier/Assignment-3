@@ -71,5 +71,10 @@ public class H_Pong extends Obj
 	    papplet.rect(wallx, papplet.mouseY, w, h);
 		
 	}
+	
+	void newgame()
+	{
+		
+	}
 
 }
