@@ -46,8 +46,6 @@ public class Menu extends PApplet
 		int x1 = r.nextInt(300 - 10) + 10;
 		int y1 = r.nextInt(650 - 300) + 300; 
 		int a1 = r.nextInt(665 - 365) + 365;
-		int b1 = r.nextInt(980 - 686) + 686;
-		int c1 = r.nextInt(600 - 300) + 300;
 
 		
 		//Create the buttons for the menu
@@ -67,9 +65,6 @@ public class Menu extends PApplet
 		
 		H_Pong pong = new H_Pong(this,a1 ,y1 );
 		objs.add(pong);
-		
-		H_Space space = new H_Space(this, b1, c1);
-		objs.add(space);
 	}
 	
 	public void settings()
