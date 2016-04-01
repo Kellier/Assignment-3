@@ -19,7 +19,7 @@ public class Enemy_Bullet extends Obj implements Hit
 	    
 	    if (pos.y > papplet.height)
 	    {
-	      Obj.remove(this);
+	      objes.remove(this);
 	    }
 		
 	}

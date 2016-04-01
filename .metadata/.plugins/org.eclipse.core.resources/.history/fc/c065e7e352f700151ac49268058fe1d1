@@ -48,7 +48,7 @@ public class Shooter extends Obj
 	    
 	    if(keys[shoot] && time > 12)
 	    {
-	        Bullet bullet = new Bullet();
+	        Bullet bullet = new Bullet(papplet, W, W);
 	        bullet.pos.x = pos.x;
 	        bullet.pos.y = pos.y;
 	        Obj.add(bullet);

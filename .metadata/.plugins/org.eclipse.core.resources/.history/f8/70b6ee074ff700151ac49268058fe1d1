@@ -10,13 +10,13 @@ public class Shooter extends Obj
 	
 	public void keyPressed()
 	{
-	  keys[papplet.keyCode] = true;
+	  keys[hashCode()] = true;
 	}
 
 	//Method to move the paddles if released the paddle will stop
 	public void keyReleased()
 	{
-	  keys[papplet.keyCode] = false;
+	  keys[hashCode()] = false;
 	}
 
 	public Shooter(PApplet papplet, float startx, float starty, char left, char right, char shoot, char newg) 
@@ -48,7 +48,7 @@ public class Shooter extends Obj
 	    
 	    if(keys[shoot] && time > 12)
 	    {
-	        Bullet bullet = new Bullet();
+	        Bullet bullet = new Bullet(papplet, W, W);
 	        bullet.pos.x = pos.x;
 	        bullet.pos.y = pos.y;
 	        Obj.add(bullet);

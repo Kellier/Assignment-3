@@ -252,7 +252,6 @@ public class Menu extends PApplet
 				  
 			bulletCollision1();
 			bulletCollision2();
-			EnemyHealth();
 			Screen();
 		}
 	}
@@ -297,30 +296,6 @@ public class Menu extends PApplet
 	            ((EnemyHit) other).applyTo((Enemy)go);
 	            objes.remove(other);
 	          }
-	        }
-	      }
-	    }
-	  }
-	}
-	
-	void EnemyHealth()
-	{
-	  for(int i = objes.size()- 1; i >= 0; i--)
-	  {
-	    Obj go = objes.get(i);
-	    if(go instanceof Shooter)
-	    {
-	      for(int j = objes.size() - 1; j >= 0; j--)
-	      {
-	        Obj other = objes.get(j);
-	        if(other instanceof Enemy)
-	        {
-	        	if(other.health <= 0)
-	        	{
-	        		((Shooter) go).score += 10;
-	        		objes.remove(other);	
-	        	}
-	        
 	        }
 	      }
 	    }

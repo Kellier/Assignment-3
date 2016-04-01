@@ -6,11 +6,12 @@ public class Bullet extends Obj implements EnemyHit
 {
 	PApplet papplet;
 	
-	public Bullet() 
+	public Bullet(PApplet papplet, float x, float y) 
 	{
+		super(papplet, x, y);
 		speed = 10.0f;
+		// TODO Auto-generated constructor stub
 	}
-
 
 	@Override
 	void position() 

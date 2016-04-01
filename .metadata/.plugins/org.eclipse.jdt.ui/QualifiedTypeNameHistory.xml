@@ -5,4 +5,6 @@
 <fullyQualifiedTypeName name="processing.core.PFont"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="processing.core.PApplet"/>
+<fullyQualifiedTypeName name="com.jogamp.newt.event.KeyEvent"/>
 </qualifiedTypeNameHistroy>

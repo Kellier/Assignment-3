@@ -6,8 +6,9 @@ public class Enemy_Bullet extends Obj implements Hit
 {
 	PApplet papplet;
 
-	public Enemy_Bullet() 
+	public Enemy_Bullet(PApplet papplet, float x, float y) 
 	{
+		super(papplet, x, y);
 		speed = 10.0f;
 	}
 

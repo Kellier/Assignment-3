@@ -21,7 +21,7 @@ public class Enemy extends Obj
 	    
 	    if(time > 30)
 	    {
-	      Enemy_Bullet bullet = new Enemy_Bullet();
+	      Enemy_Bullet bullet = new Enemy_Bullet(papplet, speedx, speedx);
 	      bullet.pos.x = pos.x;
 	      bullet.pos.y = pos.y;
 	      Obj.add(bullet);
@@ -36,6 +36,19 @@ public class Enemy extends Obj
 	    if(pos.x < 0)
 	    {
 	      speedx = - speedx;
+	    }
+	    
+	    if(health <= 0)
+	    {
+	      Obj.remove(this);
+	      for(int i = 0; i < Obj.size(); i++)
+	      {
+	        Obj go = Obj.get(i);
+	        if(go instanceof Shooter)
+	        {
+	          go.score += 10;
+	        }
+	      }
 	    }
 	    
 	    pos.x = pos.x + speedx;

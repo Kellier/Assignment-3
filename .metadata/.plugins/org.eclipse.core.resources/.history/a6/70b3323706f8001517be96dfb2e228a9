@@ -51,7 +51,7 @@ public class Shooter extends Obj
 	        Bullet bullet = new Bullet();
 	        bullet.pos.x = pos.x;
 	        bullet.pos.y = pos.y;
-	        Obj.add(bullet);
+	        objes.add(bullet);
 	        time = 0;
 	    }
 	    

@@ -26,11 +26,6 @@ public abstract class Obj
 	int i1 = r.nextInt(330 - 0) + 0;
 	int i2 = r.nextInt(700 - 200) + 200;
 	
-	public Obj()
-	{
-		
-	}
-	
 
 	public Obj(PApplet papplet, float x, float y) 
 	{
@@ -92,5 +87,9 @@ public abstract class Obj
 		
 	}
 
+	public static void remove(Enemy enemy) 
+	{
+	
+	}
 
 }
