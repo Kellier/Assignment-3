@@ -89,13 +89,14 @@ public class Ball extends Obj
 	    papplet.text("Player:  " + lives, 600, 40);
 		
 	}
+	
+	Random r = new Random();
+	int i1 = r.nextInt(900 - 100) + 100;
+	int i2 = r.nextInt(papplet.height - 0) + 0;
 
 	@Override
 	void newgame() 
 	{	
-		Random r = new Random();
-		int i1 = r.nextInt(900 - 100) + 100;
-		int i2 = r.nextInt(papplet.height - 0) + 0;
 	    speedx = 8;
 	    speedy = 8;
 	    lives = 5;
@@ -106,12 +107,9 @@ public class Ball extends Obj
 	
 	void reset()
 	{
-		Random r = new Random();
-		int i1 = r.nextInt(900 - 100) + 100;
-		int i2 = r.nextInt(papplet.height - 0) + 0;
-		pos.x = i1;
-		pos.y = i2;
-		br = 10;
+	  pos.x = i1;
+	  pos.y = i2;
+	  br = 10;
 	}
 
 }

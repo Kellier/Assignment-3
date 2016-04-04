@@ -15,7 +15,7 @@ public class Star extends Obj
 	{
 		super(papplet, startx, starty);
 		this.papplet = papplet;
-		this.radius = radius * 2;
+		this.radius = radius;
 		this.points = points;
 		rot = 0.0f;
 		rotSpeed = 0.01f;

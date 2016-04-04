@@ -52,6 +52,10 @@ public class Menu extends PApplet
 		int c1 = r.nextInt(600 - 300) + 300;
 		int d1 = r.nextInt(900 - 100) + 100;
 		int e1 = r.nextInt(height - 0) + 0;
+		int f1 = r.nextInt(width - 0) + 0;
+		int g1 = r.nextInt(50 - 10) + 10;
+		int h1 = r.nextInt(10 - 5) + 5;
+		
 
 		
 		//Create the buttons for the menu
@@ -86,11 +90,7 @@ public class Menu extends PApplet
 		
 		for(int j = 0; j < 40; j++)
 		{
-			int e2 = r.nextInt(height - 0) + 0;
-			int f1 = r.nextInt(width - 0) + 0;
-			int g1 = r.nextInt(50 - 10) + 10;
-			int h1 = r.nextInt(10 - 5) + 5;
-			Star star = new Star(this, f1, e2, g1, (int)h1);
+			Star star = new Star(this, f1, e1, g1, (int)h1);
 			obje.add(star);
 		}
 		
