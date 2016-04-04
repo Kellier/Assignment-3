@@ -61,4 +61,36 @@ public abstract class Obj
 		PApplet.runSketch(a, new Menu());
 
 	}
+
+	public static void remove(Bullet bullet) 
+	{
+		
+	}
+
+	public static void add(Bullet bullet) 
+	{
+		
+	}
+
+	public static Obj get(int i) 
+	{
+		return null;
+	}
+
+	public static int size() 
+	{
+		return 0;
+	}
+
+	public static void remove(Enemy_Bullet bullet) 
+	{
+		
+	}
+
+	public static void add(Enemy_Bullet bullet) 
+	{
+		
+	}
+
+
 }

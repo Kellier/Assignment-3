@@ -6,6 +6,18 @@ public class Shooter extends Obj
 {
 	PApplet papplet;
 	char left, right, shoot, newg;
+	boolean[] keys = new boolean[512];
+	
+	public void keyPressed()
+	{
+	  keys[papplet.keyCode] = true;
+	}
+
+	//Method to move the paddles if released the paddle will stop
+	public void keyReleased()
+	{
+	  keys[papplet.keyCode] = false;
+	}
 
 	public Shooter(PApplet papplet, float startx, float starty, char left, char right, char shoot, char newg) 
 	{
@@ -24,26 +36,26 @@ public class Shooter extends Obj
 	{
 	    move.mult(speed);
 	    
-	    if(Menu.keys[left])
+	    if(keys[left])
 	    {
 	      pos.x -= speed;
 	    }
 	    
-	    if(Menu.keys[right])
+	    if(keys[right])
 	    {
 	      pos.x += speed;
 	    }
 	    
-	    if(Menu.keys[shoot] && time > 12)
+	    if(keys[shoot] && time > 12)
 	    {
 	        Bullet bullet = new Bullet();
 	        bullet.pos.x = pos.x;
 	        bullet.pos.y = pos.y;
-	        Menu.objes.add(bullet);
+	        Obj.add(bullet);
 	        time = 0;
 	    }
 	    
-	    if(Menu.keys[newg])
+	    if(keys[newg])
 	    {
 	      newgame();
 	    }

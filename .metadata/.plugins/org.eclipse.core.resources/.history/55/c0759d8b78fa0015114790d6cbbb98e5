@@ -20,7 +20,7 @@ public class Bullet extends Obj implements EnemyHit
 	    
 	    if (pos.y < 0)
 	    {
-	    	Menu.objes.remove(this);
+	    	Obj.remove(this);
 	    }
 		
 	}

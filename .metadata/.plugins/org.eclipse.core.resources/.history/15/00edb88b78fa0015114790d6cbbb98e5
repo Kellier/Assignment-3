@@ -24,7 +24,7 @@ public class Enemy extends Obj
 	      Enemy_Bullet bullet = new Enemy_Bullet();
 	      bullet.pos.x = pos.x;
 	      bullet.pos.y = pos.y;
-	      Menu.objes.add(bullet);
+	      Obj.add(bullet);
 	      time = 0;
 	    }
 	    
