@@ -1,0 +1,32 @@
+package assignment;
+
+import processing.core.*;
+
+public class Pitch extends Obj
+{
+	PApplet papplet;
+
+	public Pitch() 
+	{
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	void position() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void thing() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void newgame() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

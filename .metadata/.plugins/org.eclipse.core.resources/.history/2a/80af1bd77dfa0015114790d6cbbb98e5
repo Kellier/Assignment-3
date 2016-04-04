@@ -15,14 +15,12 @@ public abstract class Obj
 	float foodx, foody;
 	float enemyx, enemyy;
 	float speedx, speedy;
-	float recta;
 	float w, h;
     float W;
     float halfw;
     int time = 12;
     int score;
     int health;
-    int p_lives;
 	
 	Random r = new Random();
 	int i1 = r.nextInt(330 - 0) + 0;
@@ -39,7 +37,6 @@ public abstract class Obj
 		this.papplet = papplet;
 		pos = new PVector(x, y);
 		move = new PVector(0, -1);
-		this.recta = 970.0f;
 	    this.w = 10;
 	    this.h = 100;
 	    this.W = W;
@@ -51,8 +48,7 @@ public abstract class Obj
 	    this.foodx = i1;
 	    this.foody = i2;
 	    this.enemyx = 0;
-	    this.enemyy = 0;
-	    p_lives = 5;
+	    this.enemyy = 0; 
 	}
 
 	abstract void position();
