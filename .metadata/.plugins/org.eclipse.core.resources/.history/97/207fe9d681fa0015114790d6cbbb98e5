@@ -18,7 +18,6 @@ public class Ball extends Obj
 		this.papplet = papplet;
 		this.reset = reset;
 		this.newg = newg;
-		lives = 5;
 	}
 
 	@Override
@@ -45,7 +44,7 @@ public class Ball extends Obj
 	    //If statement that decrements the Player 2 lives and resets the ball position
 	    if(pos.x > papplet.width)
 	    {
-	      lives --;
+	      p_lives --;
 	      reset();
 	    }
 	    
@@ -86,7 +85,7 @@ public class Ball extends Obj
 	    
 	    papplet.fill(7, 29, 103);
 	    papplet.textSize(30);
-	    papplet.text("Player:  " + lives, 600, 40);
+	    papplet.text("Player:  " + p_lives, 600, 40);
 		
 	}
 	
@@ -99,7 +98,7 @@ public class Ball extends Obj
 	{	
 	    speedx = 8;
 	    speedy = 8;
-	    lives = 5;
+	    p_lives = 5;
 	    pos.x = i1;
 	    pos.y = i2;
 	    br = 10;	

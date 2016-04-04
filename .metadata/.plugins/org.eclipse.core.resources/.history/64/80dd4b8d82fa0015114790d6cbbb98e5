@@ -99,7 +99,7 @@ public class Ball extends Obj
 	{	
 	    speedx = 8;
 	    speedy = 8;
-	    lives = 5;
+	    p_lives = 5;
 	    pos.x = i1;
 	    pos.y = i2;
 	    br = 10;	

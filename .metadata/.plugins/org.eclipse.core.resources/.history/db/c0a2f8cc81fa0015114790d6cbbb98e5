@@ -50,6 +50,7 @@ public class Enemy extends Obj
 	    		}
 	    	}
 	    }
+	    }
 	    
 	    pos.x = pos.x + speedx;
 	    time ++;

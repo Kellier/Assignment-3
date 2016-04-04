@@ -255,7 +255,6 @@ public class Menu extends PApplet
 				Obj go = obje.get(i);
 				go.position();
 				go.thing();
-				go.newgame();
 			}
 			
 			GameLives();
@@ -277,7 +276,6 @@ public class Menu extends PApplet
 				Obj go = objes.get(i);
 				go.position();
 				go.thing();
-				go.newgame();
 			}
 				  
 			bulletCollision1();
@@ -368,11 +366,11 @@ public class Menu extends PApplet
 	  for(int i = obje.size() - 1; i >= 0; i--)
 	  {
 	    //Name the global variable
-	    Obj go = obje.get(i);
+	    Object go = obje.get(i);
 	    if(go instanceof Ball)
-	    {  
+	    {      
 	      //If statement to indicate what happens when player 1 loses all their lives
-	      if(go.lives == 0)
+	      if(go.p_lives == 0)
 	      {
 	        background(0);
 	        textAlign(CENTER, CENTER);
@@ -381,7 +379,8 @@ public class Menu extends PApplet
 	        text("Computer Wins, You Lose Chap!!", width / 2, height / 2);
 	        text("Press N to restart", width / 2, 400);
 	      }
-	    }    
+	    }
+	      
 	  }
 	}
 

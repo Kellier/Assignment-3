@@ -22,7 +22,7 @@ public abstract class Obj
     int time = 12;
     int score;
     int health;
-    int lives;
+    int p_lives;
 	
 	Random r = new Random();
 	int i1 = r.nextInt(330 - 0) + 0;
@@ -52,6 +52,7 @@ public abstract class Obj
 	    this.foody = i2;
 	    this.enemyx = 0;
 	    this.enemyy = 0;
+	    p_lives = 5;
 	}
 
 	abstract void position();

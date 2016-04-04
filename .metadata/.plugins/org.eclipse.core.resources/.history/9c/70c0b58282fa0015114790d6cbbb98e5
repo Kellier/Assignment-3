@@ -22,7 +22,7 @@ public abstract class Obj
     int time = 12;
     int score;
     int health;
-    int lives;
+    int p_lives;
 	
 	Random r = new Random();
 	int i1 = r.nextInt(330 - 0) + 0;
