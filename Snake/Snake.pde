@@ -20,6 +20,9 @@ void setup()
   
   Player ply = new Player('W', 'A', 'D', 'S', color(58, 209, 36));
   objects.add(ply);
+  
+  Food fd = new Food();
+  objects.add(fd);
 }
 
 void draw()
