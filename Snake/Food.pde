@@ -1,7 +1,5 @@
-class Food extends Object
+class Food extends Object 
 {
-  boolean correct = true;
-  
   
   Food()
   {
@@ -10,9 +8,16 @@ class Food extends Object
     println("In Food Default Constructor");
   }
   
+    
+    
   void position()
   {
-
+    if(foodx == snx && foody == sny)
+    {
+      correct = true;
+      snakel++;
+      points++;
+    }
   }
   
   void thing()
@@ -21,8 +26,8 @@ class Food extends Object
     
     while(correct)
     {
-      float x = random(1, width /10);
-      float y = random(1, height/10);
+      int x = (int)random(1, width/ 10);
+      int y = (int)random(1, height / 10);
       
       foodx = (int)(5 + x * 10);
       foody = (int)(5 + y * 10);
@@ -40,8 +45,6 @@ class Food extends Object
         }
       }
     }
-    
     rect(foodx - 5, foody - 5, w, h);
-    
   }
 }

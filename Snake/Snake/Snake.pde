@@ -18,12 +18,10 @@ void setup()
 {
   size(1000, 700);
   
-  frameRate(10);
-  
-  Player ply = new Player('W', 'A', 'D', 'S', color(58, 209, 36));
+  Player ply = new Player('W', 'A', 'D', 'S', random(0, width), random(50, 650), color(58, 209, 36));
   objects.add(ply);
   
-  Food fd = new Food();
+  Food fd = new Food(random(0, width), random(20, 690));
   objects.add(fd);
 }
 
@@ -53,11 +51,15 @@ void SnakeCollision()
         Object other = objects.get(j);
         if(other instanceof Food)
         {
-          if(other.foodx == go.snx && other.foody == go.sny)
+          float dist = go.pos.dist(other.pos);
+          println(dist);
+          println(go.halfW);
+          println(other.halfW);
+          if(dist < go.halfW + other.halfW)
           {
-            go.correct = true;
-            go.snakel ++;
-            go.points++;
+            
+            ((Increase) other).applyTo((Player)go);
+            ((FoodGone) go).applyTo((Food)other);
             objects.remove(other);
           }
         }
@@ -65,3 +67,5 @@ void SnakeCollision()
     }
   }
 }
+  
+  

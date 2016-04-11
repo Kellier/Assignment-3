@@ -1,4 +1,4 @@
-class Player extends Object
+class Player extends Object 
 {
   char up;
   char left;
@@ -28,7 +28,7 @@ class Player extends Object
     {
       if(snakey[1] != snakey[0] - 10)
       {
-        speedy = -5;
+        speedy = -10;
         speedx = 0;
       }
     }
@@ -37,7 +37,7 @@ class Player extends Object
     {
       if(snakey[1] != snakey[0] + 10)
       {
-        speedy = 5;
+        speedy = 10;
         speedx = 0;
       }
     }
@@ -47,7 +47,7 @@ class Player extends Object
       if(snakex[1] != snakex[0] - 10)
       {
         speedy = 0;
-        speedx = -5;
+        speedx = -10;
       }
     }
     
@@ -56,7 +56,7 @@ class Player extends Object
       if(snakex[1] != snakex[0] + 10)
       {
         speedy = 0;
-        speedx = 5;
+        speedx = 10;
       }
     }
     
@@ -79,8 +79,8 @@ class Player extends Object
     fill(c);
     for(int i = 0; i < snakel; i++)
     {
-      float x = snakex[i];
-      float y = snakey[i];
+      int x = snakex[i];
+      int y = snakey[i];
       rect(x - 5, y - 5, w, h);
     }
     
@@ -89,5 +89,10 @@ class Player extends Object
       snakex[j] = snakex[j - 1];
       snakey[j] = snakey[j - 1];
     } 
+    
+        
+    fill(58, 209, 36);
+    textSize(20);
+    text("Score: " + points, 500, 20);
   }
 }

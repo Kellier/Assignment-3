@@ -1,8 +1,9 @@
 abstract class Object
 {
+  boolean correct;
   int[] snakex;
   int[] snakey;
-  float snx, sny;
+  int snx, sny;
   int foodx, foody;
   int speedx, speedy;
   int points;
@@ -19,6 +20,7 @@ abstract class Object
   
   Object(float x, float y)
   {
+    this.correct = true;
     this.snakex = new int[100];
     this.snakey = new int[100];
     this.w = 10;
