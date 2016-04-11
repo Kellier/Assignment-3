@@ -4,6 +4,7 @@ class Player extends Object
   char left;
   char right;
   char down;
+  char reset;
   
   Player()
   {
@@ -12,12 +13,13 @@ class Player extends Object
     println("In Player Default Constructor");
   }
 
-  Player(char up, char left, char right, char down, color c)
+  Player(char up, char left, char right, char down, char reset, color c)
   {
     this.up = up;
     this.left = left;
     this.right = right;
     this.down = down;
+    this.reset = reset;
     this.c = c;  
     points = 0;
   }
@@ -66,11 +68,19 @@ class Player extends Object
     snakex[0] = (int)snx;
     snakey[0] = (int)sny;
     
-    /*if(snx > width - 5 || snx < 5 || sny > height - 5 || sny < 5)
+    if(snx > width - 5 || snx < 5 || sny > height - 5 || sny < 5)
     {
-      
+      restart();
     }
-    */
+    
+    
+    for(int i = 1; i < snakel; i++)
+    {
+      if(snx == snakex[i] && sny == snakey[i])
+      {
+        restart();
+      }
+    }
     
   }
   
@@ -94,5 +104,25 @@ class Player extends Object
     fill(58, 209, 36);
     textSize(20);
     text("Score: " + points, 500, 20);
+  }
+  
+  void reset()
+  {
+    //speedx = 0;
+    //speedy = 0;
+    //snx += speedx;
+    //sny += speedy;
+    points = 0;
+    snakel = 1;
+    correct = true;
+  }
+  
+  void restart()
+  {
+    fill(58, 209, 36);
+    textSize(20);
+    text("You Lose", 500, 320);
+    text("Press R to Reset", 500, 350);
+    text("Score" + points, 500, 380);
   }
 }

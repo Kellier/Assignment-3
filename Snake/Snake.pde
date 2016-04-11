@@ -20,10 +20,10 @@ void setup()
   
   frameRate(10);
   
-  Player ply = new Player('W', 'A', 'D', 'S', color(58, 209, 36));
+  Player ply = new Player('W', 'A', 'D', 'S', 'R', color(58, 209, 36));
   objects.add(ply);
   
-  Food fd = new Food();
+  Food fd = new Food('R');
   objects.add(fd);
 }
 
@@ -36,6 +36,7 @@ void draw()
     Object go = objects.get(i);
     go.position();
     go.thing();
+    //go.reset();
   }
   
   SnakeCollision();
@@ -58,7 +59,7 @@ void SnakeCollision()
             go.correct = true;
             go.snakel ++;
             go.points++;
-            objects.remove(other);
+            rect(other.foodx - 5, other.foody - 5, other.w, other.h);
           }
         }
       }

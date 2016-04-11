@@ -1,6 +1,8 @@
 class Food extends Object 
 {
   
+  char reset;
+  
   Food()
   {
     //Constructor chaining. Call a constructor in the super class
@@ -8,7 +10,10 @@ class Food extends Object
     println("In Food Default Constructor");
   }
   
-    
+  Food(char reset)
+  {
+    this.reset = reset;
+  }
     
   void position()
   {
@@ -46,5 +51,13 @@ class Food extends Object
       }
     }
     rect(foodx - 5, foody - 5, w, h);
+  }
+  
+  void reset()
+  {
+    foodx = -1;
+    foody = -1;
+    snakel = 1;
+    correct = true;
   }
 }
