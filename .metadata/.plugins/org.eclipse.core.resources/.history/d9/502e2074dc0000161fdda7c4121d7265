@@ -1,20 +1,17 @@
 package assignment;
 
-//Importing various libraries
 import java.util.Random;
 
 import processing.core.*;
 
-//Ball class for pong game which extends the abstract class
 public class Ball extends Obj 
 {
-	//Fields
 	PApplet papplet;
 	float br = 10;
 	char reset;
 	char newg;
 	
-	//Constructor to declare the starting point of the ball and how it resets
+
 	public Ball(PApplet papplet, float startx, float starty, char reset, char newg)
 	{
 		super(papplet, startx, starty);
@@ -25,63 +22,61 @@ public class Ball extends Obj
 	}
 
 	@Override
-	//Method to set position and movement of the object
 	void position() 
 	{
-	    //Statement which indicates what happens when the ball hits off the paddle for Player
+	    //If statement which indicates what happens when the ball hits off the paddle for Player
 	    if((pos.x >= recta - br) && (pos.x <= (recta - br) + w) && (pos.y >= papplet.mouseY ))
 	    {
 	      speedx = -speedx;
 	    }
 	    
-	    //Statement so ball bounces off the walls
+	    //If statement so ball bounces off the walls
 	    if(pos.y > papplet.height - 20)
 	    {
 	      speedy = -speedy;
 	    }
 	    
-	    //Statement so ball bounces off the walls
+	    //If statement so ball bounces off the walls
 	    if(pos.y < 20)
 	    {
 	      speedy = -speedy;
 	    }
 	    
-	    //Statement that decrements the Player lives and resets the ball position
+	    //If statement that decrements the Player 2 lives and resets the ball position
 	    if(pos.x > papplet.width)
 	    {
 	      lives --;
 	      reset();
 	    }
 	    
-	    //Statement that decrements the Player lives and resets the ball position
+	    //If statement that decrements the Player 1 lives and resets the ball position
 	    if(pos.x < br)
 	    {
 	      speedx = -speedx;
 	    }
 	    
 	    
-	    //What happens when key is pressed
+	    //If pressed the game will reset the ball position
 	    if(Menu.keys[reset])
 	    {
 	      reset();
 	    }
 	    
-	    //What happens when key is pressed
+	    //If pressed the game will start a new one
 	    if(Menu.keys[newg])
 	    {
 	      newgame();
 	    }
 	    
+	    //Increments the speed of the ball
 	    pos.x = pos.x + speedx;
 	    pos.y = pos.y + speedy;
 		
 	}
 
 	@Override
-	//Abstract method to draw the object itself
 	void thing() 
 	{
-		//Draw the ball
 	    papplet.pushMatrix();
 	    papplet.translate(pos.x, pos.y);
 	    papplet.stroke(7, 29, 103);
@@ -89,7 +84,6 @@ public class Ball extends Obj
 	    papplet.ellipse(0, 0, br * 2, br * 2);
 	    papplet.popMatrix();
 	    
-	    //Display text
 	    papplet.fill(7, 29, 103);
 	    papplet.textSize(30);
 	    papplet.text("Player:  " + lives, 600, 40);
@@ -97,7 +91,6 @@ public class Ball extends Obj
 	}
 
 	@Override
-	//Abstract method to reset the variables
 	void newgame() 
 	{	
 		Random r = new Random();
@@ -111,7 +104,6 @@ public class Ball extends Obj
 	    br = 10;	
 	}
 	
-	//Method to reset position of the ball
 	void reset()
 	{
 		Random r = new Random();

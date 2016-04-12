@@ -10,7 +10,7 @@ public class Shooter extends Obj
 	PApplet papplet;
 	char left, right, shoot, newg;
 	
-	//Constructor to declare the buttons for the movement of the shooter using keys, starting point of the shooter and firing the bullets
+	//Constructor to declare the buttons for the movement of the shooter, starting point of the shooter and firing the bullets
 	public Shooter(PApplet papplet, float startx, float starty, char left, char right, char shoot, char newg) 
 	{
 		super(papplet, startx, starty);
@@ -19,7 +19,6 @@ public class Shooter extends Obj
 	    this.right = right;
 	    this.shoot = shoot;
 	    this.newg = newg;
-	    //Set the health and score
 	    health = 100;
 	    score = 0;
 	}
@@ -98,7 +97,6 @@ public class Shooter extends Obj
 		
 	}
 	
-	@Override
 	//Abstract method to reset the variables
     void newgame()
     {

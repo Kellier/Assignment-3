@@ -1,17 +1,13 @@
 package assignment;
 
-//Importing various libraries
 import processing.core.*;
 import java.util.Random;
 
-//Food class for snake game which extends the abstract class
 public class Food extends Obj
 {
-	//Fields
 	PApplet papplet;
 	char newg;
-	
-	//Constructor to declare key to reset
+
 	public Food(PApplet papplet, char newg) 
 	{
 		this.papplet = papplet;
@@ -19,10 +15,8 @@ public class Food extends Obj
 	}
 
 	@Override
-	//Method to set position and movement of the object
 	void position() 
 	{
-		//What happens when key is pressed
 	    if(Menu.keys[newg])
 	    {
 	      newgame();
@@ -30,12 +24,10 @@ public class Food extends Obj
 	}
 
 	@Override
-	//Abstract method to draw the object itself
 	void thing() 
 	{
 	    papplet.fill(250, 30, 10);
 	    
-	    //Randomly generated numbers for various methods
 		Random r = new Random();
 		int i1 = r.nextInt(papplet.width/10 - 1) + 1;
 		int i2 = r.nextInt(papplet.height/10 - 1) + 1;
@@ -50,7 +42,6 @@ public class Food extends Obj
 	      
 	      for(int i = 0; i < snakel; i++)
 	      {
-	    	//Statement to store the points of the food in the array list for the snake position
 	        if(x == snakex[i] && y == snakey[i])
 	        {
 	          correct = true;
@@ -62,14 +53,11 @@ public class Food extends Obj
 	        }
 	      }
 	    }
-	    
-	    //Draw food
 	    papplet.rect(foodx - 5, foody - 5, w, h);
 		
 	}
 
 	@Override
-	//Abstract method to reset the variables
 	void newgame() 
 	{
 	    foodx = -1;

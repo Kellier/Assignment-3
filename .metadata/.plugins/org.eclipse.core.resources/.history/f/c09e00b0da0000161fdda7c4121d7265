@@ -6,7 +6,6 @@ import processing.core.*;
 //H_Snake class for the homescreen which extends the abstract class
 public class H_Snake extends Obj 
 {
-	//Fields
 	PApplet papplet;
 
 	//Constructor

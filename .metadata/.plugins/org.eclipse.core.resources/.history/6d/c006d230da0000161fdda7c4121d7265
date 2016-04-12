@@ -1,15 +1,11 @@
 package assignment;
 
-//Importing various libraries
 import processing.core.*;
 
-//Bullet class for space invaders game which extends the abstract class
 public class Bullet extends Obj implements EnemyHit
 {
-	//Fields
 	PApplet papplet;
 	
-	//Constructor
 	public Bullet() 
 	{
 		speed = 10.0f;
@@ -17,7 +13,6 @@ public class Bullet extends Obj implements EnemyHit
 
 
 	@Override
-	//Method to set position and movement of the object
 	void position() 
 	{
 	    move.mult(speed);
@@ -25,17 +20,14 @@ public class Bullet extends Obj implements EnemyHit
 	    
 	    if (pos.y < 0)
 	    {
-	    	//Remove object if it goes beyond the screens height
 	    	Menu.objes.remove(this);
 	    }
 		
 	}
 
 	@Override
-	//Abstract method to draw the object itself 
 	void thing() 
 	{
-		//Draw the bullet
 	    papplet.stroke(40, 232, 23);
 	    papplet.pushMatrix();
 	    papplet.translate(pos.x, pos.y);
@@ -45,14 +37,12 @@ public class Bullet extends Obj implements EnemyHit
 	}
 
 	@Override
-	//Interface to reduce enemy health if its hit with a bullet
 	public void applyTo(Enemy enemy) 
 	{
 		enemy.health -= 5;
 	}
 
 	@Override
-	//Abstract method to reset the variables
 	void newgame() 
 	{
 		speed = 10.0f;		

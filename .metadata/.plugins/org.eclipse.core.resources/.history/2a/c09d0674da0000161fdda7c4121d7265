@@ -6,7 +6,6 @@ import processing.core.*;
 //Bullet class for space invaders game which extends the abstract class
 public class Bullet extends Obj implements EnemyHit
 {
-	//Fields
 	PApplet papplet;
 	
 	//Constructor
@@ -35,7 +34,6 @@ public class Bullet extends Obj implements EnemyHit
 	//Abstract method to draw the object itself 
 	void thing() 
 	{
-		//Draw the bullet
 	    papplet.stroke(40, 232, 23);
 	    papplet.pushMatrix();
 	    papplet.translate(pos.x, pos.y);

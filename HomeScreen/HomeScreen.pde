@@ -6,7 +6,7 @@ void setup()
 {
   size(1000, 700);
   
-  H_Snake snake = new H_Snake(random(10, 300), random(300, 650), color(58, 209, 36));
+  H_Snake snake = new H_Snake();
   objects.add(snake);
   
   H_Pong pong = new H_Pong(random(365, 665), random(300, 650), color(7, 29, 103));

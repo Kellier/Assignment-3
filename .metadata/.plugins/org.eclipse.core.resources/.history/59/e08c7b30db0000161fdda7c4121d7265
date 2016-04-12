@@ -1,16 +1,12 @@
 package assignment;
 
-//Importing various libraries
 import processing.core.*;
 
-//Shooter class for space invaders game which extends the abstract class
 public class Shooter extends Obj
 {
-	//Fields
 	PApplet papplet;
 	char left, right, shoot, newg;
-	
-	//Constructor to declare the buttons for the movement of the shooter using keys, starting point of the shooter and firing the bullets
+
 	public Shooter(PApplet papplet, float startx, float starty, char left, char right, char shoot, char newg) 
 	{
 		super(papplet, startx, starty);
@@ -19,33 +15,27 @@ public class Shooter extends Obj
 	    this.right = right;
 	    this.shoot = shoot;
 	    this.newg = newg;
-	    //Set the health and score
 	    health = 100;
 	    score = 0;
 	}
 
 	@Override
-	//Method to set position and movement of the object
 	void position() 
 	{
 	    move.mult(speed);
 	    
-	    //What happens when key is pressed
 	    if(Menu.keys[left])
 	    {
 	      pos.x -= speed;
 	    }
 	    
-	    //What happens when key is pressed
 	    if(Menu.keys[right])
 	    {
 	      pos.x += speed;
 	    }
 	    
-	    //What happens when key is pressed
 	    if(Menu.keys[shoot] && time > 12)
 	    {
-	    	//Call bullet class inside of shooter class
 	        Bullet bullet = new Bullet();
 	        bullet.pos.x = pos.x;
 	        bullet.pos.y = pos.y;
@@ -53,19 +43,16 @@ public class Shooter extends Obj
 	        time = 0;
 	    }
 	    
-	    //What happens when key is pressed
 	    if(Menu.keys[newg])
 	    {
 	      newgame();
 	    }
 	    
-	    //Error check
 	    if(pos.x > papplet.width)
 	    {
 	      pos.x = 0;
 	    }
 	    
-	    //Error check
 	    if(pos.x < 0)
 	    {
 	      pos.x = papplet.width;
@@ -73,7 +60,7 @@ public class Shooter extends Obj
 	    
 	    time ++;
 	    
-	    //Display text 
+	        
 	    papplet.stroke(40, 232, 23);
 	    papplet.fill(40, 232, 23);
 	    papplet.textSize(20);
@@ -83,10 +70,8 @@ public class Shooter extends Obj
 	}
 
 	@Override
-	//Abstract method to draw the object itself
 	void thing() 
 	{
-		//Draw shooter
 	    papplet.pushMatrix();
 	    papplet.translate(pos.x, pos.y);
 	    papplet.stroke(40, 232, 23);
@@ -98,8 +83,6 @@ public class Shooter extends Obj
 		
 	}
 	
-	@Override
-	//Abstract method to reset the variables
     void newgame()
     {
     	speed = 5.0f;

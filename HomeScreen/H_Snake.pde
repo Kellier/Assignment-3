@@ -1,15 +1,9 @@
 class H_Snake extends Object
-{
+{  
+  
   H_Snake()
   {
-    super(width * 0.5f, height * 0.5f, 50);
-    println("In H_Snake Default Constructor");
-  }
-  
-  H_Snake(float startx, float starty, color c)
-  {
-    super(startx, starty, 50);
-    this.c = c;
+    
   }
   
   void position()
@@ -19,12 +13,15 @@ class H_Snake extends Object
   
   void thing()
   {
-    pushMatrix();
-    translate(pos.x, pos.y);
-    stroke(c);
-    fill(c);
-    rect(0, 0, w, h);
-    popMatrix();
+    fill(58, 209, 36);
+    noStroke();
+    rect(165, 420, w, w);
+    rect(165, 431, w, w);
+    rect(165, 442, w, w);
+    rect(165, 453, w, w);
+    rect(165, 464, w, w);
+    rect(165, 475, w, w);
+    
     
     stroke(250, 30, 10);
     fill(250, 30, 10);

@@ -1,20 +1,16 @@
 package assignment;
 
-//Importing various libraries
 import processing.core.*;
 
-//Star class for pong game which extends the abstract class
 public class Star extends Obj
 {
-	//Fields
 	PApplet papplet;
 	float points;
 	float radius;
 	float rotSpeed;
 	float rot;
 	float theta = 0.0f;
-	
-	//Constructor to declare the starting point of star, their radius and their points
+
 	public Star(PApplet papplet, float startx, float starty, float radius, int points) 
 	{
 		super(papplet, startx, starty);
@@ -26,7 +22,6 @@ public class Star extends Obj
 	}
 
 	@Override
-	//Method to set position and movement of the object
 	void position() 
 	{
 	    //Set rotation speed
@@ -39,10 +34,8 @@ public class Star extends Obj
 	}
 
 	@Override
-	//Abstract method to draw the object itself
 	void thing() 
 	{
-		//Draw stars
 	    papplet.pushMatrix();
 	    papplet.translate(pos.x, pos.y);
 	    papplet.rotate(rot);
@@ -76,7 +69,6 @@ public class Star extends Obj
 	}
 
 	@Override
-	//Abstract method to reset the variables
 	void newgame() 
 	{
 		

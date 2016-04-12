@@ -1,6 +1,5 @@
 package assignment;
 
-//Importing various libraries
 import java.awt.Button;
 
 import java.util.ArrayList;
@@ -11,10 +10,8 @@ import controlP5.*;
 import processing.core.PApplet;
 import processing.core.PFont;
 
-//Main class
 public class Menu extends PApplet
 {	
-	//Variables for controlP5
 	ControlP5 cp5;
 	Button b;
 	
@@ -24,13 +21,9 @@ public class Menu extends PApplet
 	int a = 0;
 	
 	//Various array lists to increment different methods in classes for the draw method
-	//ArrayList for Home Screen
 	static ArrayList<Obj> objs = new ArrayList<Obj>();
-	//ArrayList for Space Invaders
 	static ArrayList<Obj> objes = new ArrayList<Obj>();
-	//ArrayList for Pong
 	static ArrayList<Obj> obje = new ArrayList<Obj>();
-	//ArrayList for Snake
 	static ArrayList<Obj> obj = new ArrayList<Obj>();
 	
 	PFont myFont;
@@ -52,8 +45,8 @@ public class Menu extends PApplet
 	
 	public void setup()
 	{
-		//Randomly generated numbers for various methods
 		Random r = new Random();
+		int x1 = r.nextInt(300 - 10) + 10;
 		int y1 = r.nextInt(650 - 300) + 300; 
 		int a1 = r.nextInt(665 - 365) + 365;
 		int b1 = r.nextInt(980 - 686) + 686;
@@ -74,78 +67,62 @@ public class Menu extends PApplet
 		cp5.addButton("Snake",0,600,0,80,19);
 		cp5.addButton("Space Invaders",0,800,0,80,19);
 		
-		//Call Snake method for snake game
 		Snake sna = new Snake(this, 'W', 'A', 'D', 'S', 'N');
 		obj.add(sna);
 		
-		//Call Food method for snake game
 		Food fd = new Food(this, 'N');
 		obj.add(fd);
 		
-		//Call H_Snake method for homescreen
 		H_Snake snake = new H_Snake();
 		objs.add(snake);
 		
-		//Call H_Pong method for homescreen
 		H_Pong pong = new H_Pong(this,a1 ,y1 );
 		objs.add(pong);
 		
-		//Call H_Space method for homescreen
 		H_Space space = new H_Space(this, b1, c1);
 		objs.add(space);
 		
-		//Call Shooter method for space invaders
 		Shooter ply = new Shooter(this, 500, 650, 'A', 'D', ' ', 'N');
 		objes.add(ply);
 		
-		//Call Player method for pong
 		Player pl = new Player(this,970, 290);
 		obje.add(pl);
 		
-		//Call Ball method for pong
 		Ball ball = new Ball(this, d1, e1, 'R', 'N' );
 		obje.add(ball);
 		
-		//For loop to create 40 stars
 		for(int j = 0; j < 40; j++)
 		{
 			int e2 = r.nextInt(height - 0) + 0;
 			int f1 = r.nextInt(width - 0) + 0;
 			int g1 = r.nextInt(50 - 10) + 10;
 			int h1 = r.nextInt(10 - 5) + 5;
-			//Call Star method for pong
 			Star star = new Star(this, f1, e2, g1, (int)h1);
 			obje.add(star);
 		}
 		
-		//For loop to create 10 enemy ships in space invaders
 		for(int i = 0; i < width; i += 1000)
 		{
 			for(int j = 50; j < 600; j += 50)
 			{
 				int x2 = r.nextInt(width - i) + i;
-				//Call Enemy method for Space Invaders
 				Enemy en = new Enemy(this,x2 ,j);
 				objes.add(en);
 			}
 		}
 	}
 	
-	//Set the size of the screen
 	public void settings()
 	{
 		size(1000, 700);	
 	}
 	
-	//Draw the screens
 	public void draw()
 	{
-		//Statement calls the HomeScreen
 		if(mode == "Menu")
 		{
 			background(0);
 			
-			//Load font
 		    myFont = loadFont("Arcade1.vlw");
 		    
 		    stroke(255);
@@ -189,7 +166,6 @@ public class Menu extends PApplet
 		    line(666, 200, 666, 700);
 		    line(0, 295, 1000, 295);
 		    
-		    //For loop to call homescreen methods
 		    for(int i = objs.size() - 1; i >= 0; i--)
 		    {
 		      Obj go = objs.get(i);
@@ -199,7 +175,6 @@ public class Menu extends PApplet
 		    
 		}
 		
-		//Statement calls Instructions screen
 		if(mode == "Instructions")
 		{
 			background(0);
@@ -278,14 +253,12 @@ public class Menu extends PApplet
 			text("the enemy ships", 833, 605);
 		}
 		
-		//Statement calls Pong game
 		if(mode == "Pong")
 		{
 			background(0);
 			
 			myFont = loadFont("Arcade1.vlw");
 		    
-			//For loop calls pong methods
 			for(int i = obje.size() - 1; i >= 0; i--)
 			{
 				Obj go = obje.get(i);
@@ -294,18 +267,15 @@ public class Menu extends PApplet
 				go.newgame();
 			}
 			
-			//Call method to alter lives of player
 			GameLives();
 		}
 		
-		//Statement calls snake game
 		if(mode == "Snake")
 		{
 			background(0);
 			
 			frameRate(10);
 			
-			//For loop calls methods for snake game
 			for(int i = obj.size() - 1; i >= 0; i--)
 			{
 			  Obj go = obj.get(i);
@@ -313,18 +283,15 @@ public class Menu extends PApplet
 			  go.thing();
 			}
 			
-			//Call method to alter the food in snake
 			SnakeCollision();			
 		}
 		
-		//Statement calls space invaders game
 		if(mode == "Space Invaders")
 		{
 			background(0);
 			
 			myFont = loadFont("Arcade1.vlw");
-			
-			//For loop calls methods for space invaders game
+				    
 			for(int i = objes.size() - 1; i >= 0; i--)
 			{
 				Obj go = objes.get(i);
@@ -332,17 +299,13 @@ public class Menu extends PApplet
 				go.thing();
 				go.newgame();
 			}
-			
-			//Call method to alter health of the shooter
+				  
 			bulletCollision1();
-			//Call method to alter health of the enemy
 			bulletCollision2();
-			//Call method for new game screen
 			Screen();
 		}
 	}
 	
-	//Method using polymorphism to reduce the health of the shooter using an interface in space invaders
 	void bulletCollision1()
 	{
 	  for(int i = objes.size()- 1; i >= 0; i--)
@@ -366,7 +329,6 @@ public class Menu extends PApplet
 	  }   
 	}
 
-	//Method using polymorphism to reduce the health of the enemy using an interface in space invaders
 	void bulletCollision2()
 	{
 	  for(int i = objes.size() - 1; i >= 0; i --)
@@ -390,7 +352,6 @@ public class Menu extends PApplet
 	  }
 	}
 
-	//Method using polymorphism to display a different screen if shooter dies or all enemies are killed in space invaders
 	void Screen()
 	{
 	  for(int i = objes.size() - 1; i >= 0; i --)
@@ -420,15 +381,17 @@ public class Menu extends PApplet
 	  }
 	}
 	
-	//Method uses polymorphism to indicate what happens when either player loses all their lives in pong
+	//Game lives method uses polymorphism to indicate what happens when either player loses all their lives
 	void GameLives()
 	{
-
+	  //Load all data from objects array list
 	  for(int i = obje.size() - 1; i >= 0; i--)
 	  {
+	    //Name the global variable
 	    Obj go = obje.get(i);
 	    if(go instanceof Ball)
 	    {  
+	      //If statement to indicate what happens when player 1 loses all their lives
 	      if(go.lives == 0)
 	      {
 	        background(0);
@@ -442,7 +405,6 @@ public class Menu extends PApplet
 	  }
 	}
 	
-	//Method using polymorphism to change position of the food if its eaten in snake
 	void SnakeCollision()
 	{
 	  for(int i = obj.size() - 1; i >= 0; i--)

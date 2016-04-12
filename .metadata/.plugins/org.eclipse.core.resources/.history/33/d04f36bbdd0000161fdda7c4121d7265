@@ -1,20 +1,16 @@
 package assignment;
 
-//Importing various libraries
 import processing.core.*;
 
-//Snake class for snake game which extends the abstract class
 public class Snake extends Obj
 {
-	//Fields
 	PApplet papplet;
 	char up;
 	char left;
 	char right;
 	char down;
 	char newg;
-	
-	//Constructor to declare the movement of the shooter using keys and reseting 
+
 	public Snake(PApplet papplet, char up, char left, char right, char down, char newg) 
 	{
 		this.papplet = papplet;
@@ -27,10 +23,8 @@ public class Snake extends Obj
 	}
 
 	@Override
-	//Method to set position and movement of the object
 	void position() 
 	{
-		//What happens when key is pressed
 	    if(Menu.keys[up])
 	    {
 	      if(snakey[1] != snakey[0] - 10)
@@ -40,7 +34,6 @@ public class Snake extends Obj
 	      }
 	    }
 	    
-	    //What happens when key is pressed
 	    if(Menu.keys[down])
 	    {
 	      if(snakey[1] != snakey[0] + 10)
@@ -50,7 +43,6 @@ public class Snake extends Obj
 	      }
 	    }
 	    
-	    //What happens when key is pressed
 	    if(Menu.keys[left])
 	    {
 	      if(snakex[1] != snakex[0] - 10)
@@ -60,7 +52,6 @@ public class Snake extends Obj
 	      }
 	    }
 	    
-	    //What happens when key is pressed
 	    if(Menu.keys[right])
 	    {
 	      if(snakex[1] != snakex[0] + 10)
@@ -70,7 +61,6 @@ public class Snake extends Obj
 	      }
 	    }
 	    
-	    //What happens when key is pressed
 	    if(Menu.keys[newg])
 	    {
 	      newgame();
@@ -82,13 +72,12 @@ public class Snake extends Obj
 	    snakex[0] = (int)snx;
 	    snakey[0] = (int)sny;
 	    
-	    //Error Check
 	    if(snx > papplet.width - 5 || snx < 5 || sny > papplet.height - 5 || sny < 5)
 	    {
 	        restart();
 	    }
 	    
-	    //Error Check
+	    
 	    for(int i = 1; i < snakel; i++)
 	    {
 	      if(snx == snakex[i] && sny == snakey[i])
@@ -100,10 +89,8 @@ public class Snake extends Obj
 	}
 
 	@Override
-	//Abstract method to draw the object itself
 	void thing() 
 	{
-		//Draw snake
 	    papplet.fill(58, 209, 36);
 	    for(int i = 0; i < snakel; i++)
 	    {
@@ -118,7 +105,7 @@ public class Snake extends Obj
 	      snakey[j] = snakey[j - 1];
 	    } 
 	    
-	    //Display text 
+	        
 	    papplet.fill(58, 209, 36);
 	    papplet.textSize(20);
 	    papplet.text("Score: " + points, 500, 20);
@@ -126,7 +113,6 @@ public class Snake extends Obj
 	}
 
 	@Override
-	//Abstract method to reset the variables
 	void newgame() 
 	{
 		papplet.background(0);
@@ -135,7 +121,6 @@ public class Snake extends Obj
 	    correct = true;
 	}
 	
-	//Method to display a restart screen
 	void restart()
 	{
 	  papplet.textAlign(Menu.CENTER, Menu.CENTER);
