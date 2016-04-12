@@ -24,7 +24,6 @@ public class Menu extends PApplet
 	static ArrayList<Obj> objs = new ArrayList<Obj>();
 	static ArrayList<Obj> objes = new ArrayList<Obj>();
 	static ArrayList<Obj> obje = new ArrayList<Obj>();
-	static ArrayList<Obj> obj = new ArrayList<Obj>();
 	
 	PFont myFont;
 	
@@ -66,12 +65,6 @@ public class Menu extends PApplet
 		cp5.addButton("Pong",0,400,0,80,19);
 		cp5.addButton("Snake",0,600,0,80,19);
 		cp5.addButton("Space Invaders",0,800,0,80,19);
-		
-		Snake sna = new Snake(this, 'W', 'A', 'D', 'S', 'N');
-		obj.add(sna);
-		
-		Food fd = new Food(this, 'N');
-		obj.add(fd);
 		
 		H_Snake snake = new H_Snake(this, x1, y1);
 		objs.add(snake);
@@ -273,15 +266,6 @@ public class Menu extends PApplet
 		if(mode == "Snake")
 		{
 			background(0);
-			
-			frameRate(10);
-			
-			for(int i = obj.size() - 1; i >= 0; i--)
-			{
-			  Obj go = obj.get(i);
-			  go.position();
-			  go.thing();
-			}
 		}
 		
 		if(mode == "Space Invaders")

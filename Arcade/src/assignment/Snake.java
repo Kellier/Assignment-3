@@ -1,0 +1,134 @@
+package assignment;
+
+import processing.core.*;
+
+public class Snake extends Obj
+{
+	PApplet papplet;
+	char up;
+	char left;
+	char right;
+	char down;
+	char newg;
+
+	public Snake(PApplet papplet, char up, char left, char right, char down, char newg) 
+	{
+		this.papplet = papplet;
+	    this.up = up;
+	    this.left = left;
+	    this.right = right;
+	    this.down = down;
+	    this.newg = newg;
+	    points = 0;
+	}
+
+	@Override
+	void position() 
+	{
+	    if(Menu.keys[up])
+	    {
+	      if(snakey[1] != snakey[0] - 10)
+	      {
+	        fory = -10;
+	        forx = 0;
+	      }
+	    }
+	    
+	    if(Menu.keys[down])
+	    {
+	      if(snakey[1] != snakey[0] + 10)
+	      {
+	        fory = 10;
+	        forx = 0;
+	      }
+	    }
+	    
+	    if(Menu.keys[left])
+	    {
+	      if(snakex[1] != snakex[0] - 10)
+	      {
+	        fory = 0;
+	        forx = -10;
+	      }
+	    }
+	    
+	    if(Menu.keys[right])
+	    {
+	      if(snakex[1] != snakex[0] + 10)
+	      {
+	        fory = 0;
+	        forx = 10;
+	      }
+	    }
+	    
+	    if(Menu.keys[newg])
+	    {
+	      newgame();
+	    }
+	    
+	    snx += speedx;
+	    sny += speedy;
+	    
+	    snakex[0] = (int)snx;
+	    snakey[0] = (int)sny;
+	    
+	    if(snx > papplet.width - 5 || snx < 5 || sny > papplet.height - 5 || sny < 5)
+	    {
+	        restart();
+	    }
+	    
+	    
+	    for(int i = 1; i < snakel; i++)
+	    {
+	      if(snx == snakex[i] && sny == snakey[i])
+	      {
+	        restart();
+	      }
+	    }
+		
+	}
+
+	@Override
+	void thing() 
+	{
+	    papplet.fill(58, 209, 36);
+	    for(int i = 0; i < snakel; i++)
+	    {
+	      int x = snakex[i];
+	      int y = snakey[i];
+	      papplet.rect(x - 5, y - 5, w, h);
+	    }
+	    
+	    for(int j = snakel; j > 0; j--)
+	    {
+	      snakex[j] = snakex[j - 1];
+	      snakey[j] = snakey[j - 1];
+	    } 
+	    
+	        
+	    papplet.fill(58, 209, 36);
+	    papplet.textSize(20);
+	    papplet.text("Score: " + points, 500, 20);
+		
+	}
+
+	@Override
+	void newgame() 
+	{
+		papplet.background(0);
+	    points = 0;
+	    snakel = 1;
+	    correct = true;
+	}
+	
+	void restart()
+	{
+	  papplet.textAlign(Menu.CENTER, Menu.CENTER);
+	  papplet.textSize(50);
+	  papplet.fill(58, 209, 36);
+	  papplet.text("You Lose", 500, 290);
+	  papplet.text("Press R to Reset", 500, 350);
+	  papplet.text("Score" + points, 500, 410);
+	}
+
+}
