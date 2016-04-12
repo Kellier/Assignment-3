@@ -6,9 +6,9 @@ public class H_Snake extends Obj
 {
 	PApplet papplet;
 
-	public H_Snake()
+	public H_Snake(PApplet papplet)
 	{
-		
+		this.papplet = papplet;
 	}
 
 	@Override

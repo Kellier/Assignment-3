@@ -73,7 +73,7 @@ public class Menu extends PApplet
 		Food fd = new Food(this, 'N');
 		obj.add(fd);
 		
-		H_Snake snake = new H_Snake();
+		H_Snake snake = new H_Snake(this, x1, y1);
 		objs.add(snake);
 		
 		H_Pong pong = new H_Pong(this,a1 ,y1 );

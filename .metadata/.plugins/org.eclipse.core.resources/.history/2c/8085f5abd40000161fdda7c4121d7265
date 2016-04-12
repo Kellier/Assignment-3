@@ -73,7 +73,7 @@ public class Menu extends PApplet
 		Food fd = new Food(this, 'N');
 		obj.add(fd);
 		
-		H_Snake snake = new H_Snake();
+		H_Snake snake = new H_Snake(this, x1, y1);
 		objs.add(snake);
 		
 		H_Pong pong = new H_Pong(this,a1 ,y1 );
@@ -282,8 +282,6 @@ public class Menu extends PApplet
 			  go.position();
 			  go.thing();
 			}
-			
-			SnakeCollision();			
 		}
 		
 		if(mode == "Space Invaders")
@@ -402,31 +400,6 @@ public class Menu extends PApplet
 	        text("Press N to restart", width / 2, 400);
 	      }
 	    }    
-	  }
-	}
-	
-	void SnakeCollision()
-	{
-	  for(int i = obj.size() - 1; i >= 0; i--)
-	  {
-	    Obj go = obj.get(i);
-	    if(go instanceof Snake)
-	    {
-	      for(int j = obj.size() - 1; j >= 0; j--)
-	      {
-	        Obj other = obj.get(j);
-	        if(other instanceof Food)
-	        {
-	          if(other.foodx == go.snx && other.foody == go.sny)
-	          {
-	            go.correct = true;
-	            go.snakel ++;
-	            go.points++;
-	            other.newgame();
-	          }
-	        }
-	      }
-	    }
 	  }
 	}
 

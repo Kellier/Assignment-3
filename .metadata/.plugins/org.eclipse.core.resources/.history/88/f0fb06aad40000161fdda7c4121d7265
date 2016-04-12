@@ -96,7 +96,7 @@ public class Snake extends Obj
 	    {
 	      int x = snakex[i];
 	      int y = snakey[i];
-	      papplet.rect(x - 5, y - 5, w, w);
+	      papplet.rect(x - 5, y - 5, w, h);
 	    }
 	    
 	    for(int j = snakel; j > 0; j--)
