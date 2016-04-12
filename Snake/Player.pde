@@ -62,6 +62,11 @@ class Player extends Object
       }
     }
     
+    if(keys[reset])
+    {
+      reset();
+    }
+    
     snx += speedx;
     sny += speedy;
     
@@ -70,7 +75,7 @@ class Player extends Object
     
     if(snx > width - 5 || snx < 5 || sny > height - 5 || sny < 5)
     {
-      restart();
+        restart();
     }
     
     
@@ -108,10 +113,7 @@ class Player extends Object
   
   void reset()
   {
-    //speedx = 0;
-    //speedy = 0;
-    //snx += speedx;
-    //sny += speedy;
+    background(0);
     points = 0;
     snakel = 1;
     correct = true;
@@ -119,10 +121,11 @@ class Player extends Object
   
   void restart()
   {
+    textAlign(CENTER, CENTER);
+    textSize(50);
     fill(58, 209, 36);
-    textSize(20);
-    text("You Lose", 500, 320);
+    text("You Lose", 500, 290);
     text("Press R to Reset", 500, 350);
-    text("Score" + points, 500, 380);
+    text("Score" + points, 500, 410);
   }
 }

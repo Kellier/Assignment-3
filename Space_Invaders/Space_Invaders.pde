@@ -27,7 +27,7 @@ void setup()
   {
     for(int j = 50; j < 600; j += 50)
     {
-      Enemy en = new Enemy(random(i, width), j, color(245, 250, 20));
+      Enemy en = new Enemy(random(i, width), j, 'N', color(245, 250, 20));
       objects.add(en);
     }
   }

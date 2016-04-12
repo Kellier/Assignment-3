@@ -1,6 +1,7 @@
 class Enemy extends Object
 {
   float speedx = 7.0f;
+  char newg;
   
   Enemy()
   {
@@ -9,9 +10,10 @@ class Enemy extends Object
     println("In Enemy Default Constructor");
   }
   
-  Enemy(float startx, float starty, color c)
+  Enemy(float startx, float starty, char newg, color c)
   {
     super(startx, starty, 50);
+    this.newg = newg;
     this.c = c;
     health = 5;
   }
@@ -73,13 +75,7 @@ class Enemy extends Object
   void newgame()
   {
     speed = 5.0f;
-    for(int i = 0; i < width; i += 1000)
-    {
-      for(int j = 50; j < 600; j += 50)
-      {
-        pos.x = random(i, width);
-        pos.y = j; 
-      }
-    }
+    pos.x = random(0, width);
+    pos.y =+ 50;
   }
 }

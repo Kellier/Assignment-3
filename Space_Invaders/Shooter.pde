@@ -82,9 +82,6 @@ class Shooter extends Object
     line(0, - halfw, halfw, halfw);
     line(halfw, halfw, 0, 0);
     line(- halfw, halfw, 0, 0);
-    stroke(255);
-    noFill();
-    ellipse(0,0,w,w);
     popMatrix();
   }
   

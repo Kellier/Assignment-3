@@ -59,7 +59,7 @@ void SnakeCollision()
             go.correct = true;
             go.snakel ++;
             go.points++;
-            rect(other.foodx - 5, other.foody - 5, other.w, other.h);
+            other.reset();
           }
         }
       }

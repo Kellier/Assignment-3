@@ -17,11 +17,9 @@ class Food extends Object
     
   void position()
   {
-    if(foodx == snx && foody == sny)
+    if(keys[reset])
     {
-      correct = true;
-      snakel++;
-      points++;
+      reset();
     }
   }
   
