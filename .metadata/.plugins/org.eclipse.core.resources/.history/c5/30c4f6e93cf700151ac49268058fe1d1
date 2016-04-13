@@ -1,9 +1,0 @@
-package assignment;
-
-public class H_Pong {
-
-	public H_Pong() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

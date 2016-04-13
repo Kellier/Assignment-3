@@ -3,7 +3,7 @@ package assignment;
 //Importing various libraries
 import processing.core.*;
 
-//Bullet class for space invaders game which extends the abstract class and implements the EnemyHit interface
+//Bullet class for space invaders game which extends the abstract class
 public class Bullet extends Obj implements EnemyHit
 {
 	//Fields

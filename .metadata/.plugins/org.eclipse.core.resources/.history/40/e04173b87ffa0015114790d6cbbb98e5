@@ -1,9 +1,0 @@
-package assignment;
-
-public class Star {
-
-	public Star() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

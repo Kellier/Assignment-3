@@ -1,16 +1,12 @@
 package assignment;
 
-//Importing various libraries
 import processing.core.*;
 
-//H_Pong class for the homescreen which extends the abstract class
 public class H_Pong extends Obj
 {
-	//Fields
 	float br = 10.0f;
 	PApplet papplet;
-	
-	//Constructor to declare the starting point of the object
+
 	public H_Pong(PApplet papplet, float startx, float starty) 
 	{
 		super(papplet, startx, starty);
@@ -18,34 +14,28 @@ public class H_Pong extends Obj
 	}
 
 	@Override
-	//Method to set position and movement of the object
 	void position() 
 	{
-		//Statement which indicates what happens when the ball hits off the paddle for Player
 	    if((pos.x >= wallx + br) && (pos.x <= (wallx + br) + w) && (pos.y >= papplet.mouseY))
 	    {
 	      speedx = -speedx;
 	    }
 	    
-	    //Statement so ball bounces off the walls
 	    if(pos.y > 315)
 	    {
 	      speedy = -speedy;
 	    }
 	    
-	    //Statement so ball bounces off the walls
 	    if(pos.y < 680)
 	    {
 	      speedy = -speedy;
 	    }
 	    
-	    //Statement so ball bounces off the walls
 	    if(pos.x > 646)
 	    {
 	      speedx = -speedx;
 	    }
 	    
-	    //Statement so ball bounces off the walls
 	    if(pos.x < 353)
 	    {
 	      speedx = -speedx;
@@ -56,7 +46,6 @@ public class H_Pong extends Obj
 	      papplet.mouseY = 295;
 	    }
 	    
-	    //Error Check
 	    if(papplet.mouseY > papplet.height)
 	    {
 	      papplet.mouseY = papplet.height;
@@ -68,10 +57,8 @@ public class H_Pong extends Obj
 	}
 
 	@Override
-	//Abstract method to draw the object itself
 	void thing() 
 	{
-		//Draw the ball object
 	    papplet.pushMatrix();
 	    papplet.translate(pos.x, pos.y);
 	    papplet.stroke(7, 29, 103);
@@ -79,14 +66,12 @@ public class H_Pong extends Obj
 	    papplet.ellipse(0, 0, br * 2, br * 2);
 	    papplet.popMatrix();
 	    
-	    //Draw the paddle object
 	    papplet.stroke(245, 250, 20);
 	    papplet.fill(245, 250, 20);
 	    papplet.rect(wallx, papplet.mouseY, w, h);
 		
 	}
 	
-	//Abstract method to reset the variables
 	void newgame()
 	{
 		

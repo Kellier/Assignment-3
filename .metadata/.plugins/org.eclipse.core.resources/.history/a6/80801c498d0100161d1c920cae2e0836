@@ -34,7 +34,6 @@ public class Enemy_Bullet extends Obj implements Hit
 	//Abstract method to draw the object itself
 	void thing() 
 	{
-		//Draw enemy bullets
 	    papplet.stroke(255);
 	    papplet.pushMatrix();
 	    papplet.translate(pos.x, pos.y);

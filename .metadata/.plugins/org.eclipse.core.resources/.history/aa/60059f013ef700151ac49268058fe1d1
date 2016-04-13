@@ -1,9 +1,0 @@
-package assignment;
-
-public class H_Space {
-
-	public H_Space() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
