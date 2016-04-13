@@ -49,7 +49,6 @@ public abstract class Obj
 	public Obj()
 	{
 		
-		
 	}
 	
 	//Constructor to declare all the variables values
@@ -89,7 +88,7 @@ public abstract class Obj
 	//Abstract methods to be used in all instances of the abstract class
 	abstract void position();
 	abstract void thing();
-	abstract void newgame();
+	//abstract void newgame();
 
 	public static void main(String[] args) 
 	{

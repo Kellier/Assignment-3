@@ -79,7 +79,7 @@ public class Menu extends PApplet
 		obj.add(sna);
 		
 		//Call Food method for snake game
-		Food fd = new Food(this, 0.0f, 0.0f, 'N');
+		Food fd = new Food(this, 'N');
 		obj.add(fd);
 		
 		//Call H_Snake method for homescreen

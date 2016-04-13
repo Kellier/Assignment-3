@@ -10,11 +10,10 @@ public class Food extends Obj
 	//Fields
 	PApplet papplet;
 	char newg;
-		
+	
 	//Constructor to declare key to reset
-	public Food(PApplet papplet,float startx, float starty, char newg) 
+	public Food(PApplet papplet, char newg) 
 	{
-		super(papplet, startx, starty);
 		this.papplet = papplet;
 		this.newg = newg;
 	}
@@ -33,7 +32,9 @@ public class Food extends Obj
 	@Override
 	//Abstract method to draw the object itself
 	void thing() 
-	{  
+	{
+	    papplet.fill(250, 30, 10);
+	    
 	    //Randomly generated numbers for various methods
 		Random r = new Random();
 		int i1 = r.nextInt(papplet.width/10 - 1) + 1;
@@ -63,8 +64,7 @@ public class Food extends Obj
 	    }
 	    
 	    //Draw food
-	    papplet.fill(250, 30, 10);
-	    papplet.rect(foodx - 5, foody - 5, w, w);
+	    papplet.rect(foodx - 5, foody - 5, w, h);
 		
 	}
 

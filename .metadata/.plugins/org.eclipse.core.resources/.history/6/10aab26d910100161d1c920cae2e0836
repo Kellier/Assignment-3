@@ -75,15 +75,15 @@ public class Menu extends PApplet
 		cp5.addButton("Space Invaders",0,800,0,80,19);
 		
 		//Call Snake method for snake game
-		Snake sna = new Snake(this, 0, 0, 'W', 'A', 'D', 'S', 'N');
+		Snake sna = new Snake(this, 'W', 'A', 'D', 'S', 'N');
 		obj.add(sna);
 		
 		//Call Food method for snake game
-		Food fd = new Food(this, 0.0f, 0.0f, 'N');
+		Food fd = new Food(this, 'N');
 		obj.add(fd);
 		
 		//Call H_Snake method for homescreen
-		H_Snake snake = new H_Snake(this);
+		H_Snake snake = new H_Snake();
 		objs.add(snake);
 		
 		//Call H_Pong method for homescreen
@@ -195,6 +195,7 @@ public class Menu extends PApplet
 		      Obj go = objs.get(i);
 		      go.position();
 		      go.thing();
+		      go.newgame();
 		    }
 		    
 		}

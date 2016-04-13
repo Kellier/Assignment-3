@@ -10,7 +10,12 @@ public class Food extends Obj
 	//Fields
 	PApplet papplet;
 	char newg;
-		
+	
+    //Randomly generated numbers for various methods
+	Random r = new Random();
+	int i1 = r.nextInt(papplet.width/10 - 1) + 1;
+	int i2 = r.nextInt(papplet.height/10 - 1) + 1;
+	
 	//Constructor to declare key to reset
 	public Food(PApplet papplet,float startx, float starty, char newg) 
 	{
@@ -33,11 +38,7 @@ public class Food extends Obj
 	@Override
 	//Abstract method to draw the object itself
 	void thing() 
-	{  
-	    //Randomly generated numbers for various methods
-		Random r = new Random();
-		int i1 = r.nextInt(papplet.width/10 - 1) + 1;
-		int i2 = r.nextInt(papplet.height/10 - 1) + 1;
+	{    
 	    
 	    while(correct)
 	    {
@@ -64,7 +65,7 @@ public class Food extends Obj
 	    
 	    //Draw food
 	    papplet.fill(250, 30, 10);
-	    papplet.rect(foodx - 5, foody - 5, w, w);
+	    papplet.rect(foodx - 5, foody - 5, w, h);
 		
 	}
 

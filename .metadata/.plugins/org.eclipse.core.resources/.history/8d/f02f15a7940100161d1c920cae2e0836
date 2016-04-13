@@ -15,9 +15,8 @@ public class Snake extends Obj
 	char newg;
 	
 	//Constructor to declare the movement of the shooter using keys and reseting 
-	public Snake(PApplet papplet, float startx, float starty, char up, char left, char right, char down, char newg) 
+	public Snake(PApplet papplet, char up, char left, char right, char down, char newg) 
 	{
-		super(papplet, startx, starty);
 		this.papplet = papplet;
 	    this.up = up;
 	    this.left = left;

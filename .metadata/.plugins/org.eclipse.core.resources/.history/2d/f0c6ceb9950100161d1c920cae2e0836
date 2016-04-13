@@ -64,7 +64,7 @@ public class Food extends Obj
 	    
 	    //Draw food
 	    papplet.fill(250, 30, 10);
-	    papplet.rect(foodx - 5, foody - 5, w, w);
+	    papplet.rect(foodx - 5, foody - 5, w, h);
 		
 	}
 

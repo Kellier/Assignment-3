@@ -48,7 +48,35 @@ public abstract class Obj
 	//Constructor
 	public Obj()
 	{
-		
+		this.papplet = papplet;
+		pos = new PVector(x, y);
+		move = new PVector(0, -1);
+	    this.correct = true;
+	    this.snakex = new int[100];
+	    this.snakey = new int[100];
+	    this.snakel = 1;
+	    points = 0;
+	    this.cx = papplet.width / 2;
+	    this.cy = papplet.height / 2;
+	    this.snx = cx - 5;
+	    this.sny = cy - 5;
+	    this.foodx = -1;
+	    this.foody = -1;
+	    this.forx = 0;
+	    this.fory = 0;
+		this.recta = 970.0f;
+	    this.w = 10;
+	    this.h = 100;
+	    this.W = W;
+	    this.halfw = W * 0.5f;
+	    this.speedx = 8;
+	    this.speedy = 8;
+	    this.wallx = 350;
+	    this.wally = 450;
+	    this.fdx = i1;
+	    this.fdy = i2;
+	    this.enemyx = 0;
+	    this.enemyy = 0;
 		
 	}
 	

@@ -49,7 +49,6 @@ public abstract class Obj
 	public Obj()
 	{
 		
-		
 	}
 	
 	//Constructor to declare all the variables values

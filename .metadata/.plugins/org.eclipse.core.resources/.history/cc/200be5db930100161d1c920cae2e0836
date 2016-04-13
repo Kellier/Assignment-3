@@ -1,7 +1,5 @@
 package assignment;
 
-import java.util.Random;
-
 //Importing various libraries
 import processing.core.*;
 
@@ -10,11 +8,6 @@ public class H_Snake extends Obj
 {
 	//Fields
 	PApplet papplet;
-	
-	//Randomly generated numbers for various methods
-	Random r = new Random();
-	int i1 = r.nextInt(330 - 0) + 0;
-	int i2 = r.nextInt(700 - 200) + 200;
 
 	//Constructor
 	public H_Snake(PApplet papplet)
@@ -46,7 +39,7 @@ public class H_Snake extends Obj
 	    //Draw the food
 	    papplet.stroke(250, 30, 10);
 	    papplet.fill(250, 30, 10);
-	    papplet.rect(i1, i2, 10, 10);
+	    papplet.rect(fdx, fdy, 10, 10);
 	}
 	
 	//Abstract method to reset the variables
