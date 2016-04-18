@@ -1,6 +1,3 @@
-//Background image for the menu
-PImage img1;
-
 //Various array lists to incrmemnt different methods in classes for the draw method
 ArrayList<Object> objects = new ArrayList<Object>();
 ArrayList<Star> stars = new ArrayList<Star>();
@@ -11,9 +8,6 @@ boolean[] keys = new boolean[512];
 void setup()
 {
   size(1000, 700);
-  
-  //Load image
-  img1 = loadImage("Menu2.jpg");
     
   //Set variables for the Player 21 paddle including positions, variables for movement and color
   Player ply = new Player(970, 290, color(7, 29, 103));
@@ -85,4 +79,3 @@ void GameLives()
       
   }
 }
-  

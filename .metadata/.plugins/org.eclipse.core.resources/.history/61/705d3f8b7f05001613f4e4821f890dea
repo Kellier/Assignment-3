@@ -5,7 +5,6 @@ import java.util.Random;
 //Importing various libraries
 import processing.core.*;
 
-//Pong class for the pong game which extends the abstract class
 public class Pong extends Obj 
 {
 	//Fields
@@ -14,7 +13,7 @@ public class Pong extends Obj
 	char newg;
 	PApplet papplet;
 	
-	//Constructor to declare the starting point of the object and the reset and new game buttons
+	//Constructor to declare the starting point of the object
 	public Pong(PApplet papplet, float startx, float starty, char reset, char newg) 
 	{
 		super(papplet, startx, starty);
@@ -28,7 +27,7 @@ public class Pong extends Obj
 	//Method to set position and movement of the object
 	void position() 
 	{
-		//Statement which indicates what happens when the ball hits off the paddle for Pong
+		//Statement which indicates what happens when the ball hits off the paddle for Player
 	    if((pos.x >= wallx + br) && (pos.x <= (wallx + br) + w) && (pos.y >= papplet.mouseY))
 	    {
 	      speedx = -speedx;
