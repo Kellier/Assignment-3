@@ -1,0 +1,146 @@
+package assignment;
+
+import java.util.Random;
+
+//Importing various libraries
+import processing.core.*;
+
+public class Pong extends Obj 
+{
+	//Fields
+	float br = 10.0f;
+	char reset;
+	char newg;
+	PApplet papplet;
+	
+	//Constructor to declare the starting point of the object
+	public Pong(PApplet papplet, float startx, float starty, char reset, char newg) 
+	{
+		super(papplet, startx, starty);
+		this.papplet = papplet;
+		this.reset = reset;
+		this.newg = newg;
+		lives = 5;
+	}
+
+	@Override
+	//Method to set position and movement of the object
+	void position() 
+	{
+		//Statement which indicates what happens when the ball hits off the paddle for Player
+	    if((pos.x >= wallx + br) && (pos.x <= (wallx + br) + w) && (pos.y >= papplet.mouseY))
+	    {
+	      speedx = -speedx;
+	    }
+	    
+	    //Statement so ball bounces off the walls
+	    if(pos.y > papplet.height - 20)
+	    {
+	      speedy = -speedy;
+	    }
+	    
+	    //Statement so ball bounces off the walls
+	    if(pos.y < 20)
+	    {
+	      speedy = -speedy;
+	    }
+	    
+	    //Statement so ball bounces off the walls
+	    if(pos.x > 646)
+	    {
+	      speedx = -speedx;
+	    }
+	    
+	    //Statement so ball bounces off the walls
+	    //Statement that decrements the Player lives and resets the ball position
+	    if(pos.x > papplet.width)
+	    {
+	      lives --;
+	      reset();
+	    }
+	    
+	    //Statement that decrements the Player lives and resets the ball position
+	    if(pos.x < br)
+	    {
+	      speedx = -speedx;
+	    }
+	    
+	    //What happens when key is pressed
+	    if(Menu.keys[reset])
+	    {
+	      reset();
+	    }
+	    
+	    //What happens when key is pressed
+	    if(Menu.keys[newg])
+	    {
+	      newgame();
+	    }
+	    
+		//Error Check
+	    if(papplet.mouseY < 0)
+	    {
+	      papplet.mouseY = 0;
+	    }
+	    
+	    //Error Check
+	    if(papplet.mouseY > papplet.height)
+	    {
+	      papplet.mouseY = papplet.height;
+	    }
+	    
+	    pos.x = pos.x + speedx;
+	    pos.y = pos.y + speedy;
+		
+	}
+
+	@Override
+	//Abstract method to draw the object itself
+	void thing() 
+	{
+		//Draw the ball object
+	    papplet.pushMatrix();
+	    papplet.translate(pos.x, pos.y);
+	    papplet.stroke(7, 29, 103);
+	    papplet.fill(7, 29, 103);
+	    papplet.ellipse(0, 0, br * 2, br * 2);
+	    papplet.popMatrix();
+	    
+	    //Draw the paddle object
+	    papplet.stroke(245, 250, 20);
+	    papplet.fill(245, 250, 20);
+	    papplet.rect(wallx, papplet.mouseY, w, h);
+		
+	    //Display text
+	    papplet.fill(7, 29, 103);
+	    papplet.textSize(30);
+	    papplet.text("Player:  " + lives, 600, 40);
+		
+	}
+	
+	@Override
+	//Abstract method to reset the variables
+	void newgame() 
+	{	
+		Random r = new Random();
+		int i1 = r.nextInt(900 - 100) + 100;
+		int i2 = r.nextInt(papplet.height - 0) + 0;
+	    speedx = 8;
+	    speedy = 8;
+	    lives = 5;
+	    pos.x = i1;
+	    pos.y = i2;
+	    br = 10;	
+	}
+	
+	//Method to reset position of the ball
+	void reset()
+	{
+		Random r = new Random();
+		int i1 = r.nextInt(900 - 100) + 100;
+		int i2 = r.nextInt(papplet.height - 0) + 0;
+		pos.x = i1;
+		pos.y = i2;
+		br = 10;
+	}
+}

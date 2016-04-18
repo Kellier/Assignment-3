@@ -3,7 +3,6 @@ PImage img1;
 
 //Various array lists to incrmemnt different methods in classes for the draw method
 ArrayList<Object> objects = new ArrayList<Object>();
-ArrayList<Pitch> pitchs = new ArrayList<Pitch>();
 ArrayList<Star> stars = new ArrayList<Star>();
 
 //Increment all keys for control use
@@ -23,10 +22,6 @@ void setup()
   //Set variables for the ball including positions and color
   Ball ball = new Ball('R','N', random(100, 900), random(0, height), color(255));
   objects.add(ball);
-  
-  //Load pitch methods from the pitch array list
-  Pitch pitch = new Pitch();
-  pitchs.add(pitch);
   
   //Set variables for the Stars in the medium and hard screen
   //For loop sets the amount of stars on the screen

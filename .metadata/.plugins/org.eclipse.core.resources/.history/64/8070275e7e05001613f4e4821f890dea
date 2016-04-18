@@ -1,0 +1,9 @@
+package assignment;
+
+public class Pong {
+
+	public Pong() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -98,9 +98,13 @@ public class Menu extends PApplet
 		Shooter ply = new Shooter(this, 500, 650, 'A', 'D', ' ', 'N');
 		objes.add(ply);
 		
-		//Call Pong method for pong
-		Pong pl = new Pong(this, d1, e1, 'R', 'N' );
+		//Call Player method for pong
+		Player pl = new Player(this,970, 290);
 		obje.add(pl);
+		
+		//Call Ball method for pong
+		Ball ball = new Ball(this, d1, e1, 'R', 'N' );
+		obje.add(ball);
 		
 		//For loop to create 40 stars
 		for(int j = 0; j < 40; j++)
@@ -423,7 +427,7 @@ public class Menu extends PApplet
 	  for(int i = obje.size() - 1; i >= 0; i--)
 	  {
 	    Obj go = obje.get(i);
-	    if(go instanceof Pong)
+	    if(go instanceof Ball)
 	    {  
 	      if(go.lives == 0)
 	      {
