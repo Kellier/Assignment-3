@@ -123,7 +123,7 @@ public class Snake extends Obj
 	    //Display text 
 	    papplet.fill(58, 209, 36);
 	    papplet.textSize(20);
-	    papplet.text("Score: " + points, 520, 20);
+	    papplet.text("Score: " + points, 500, 20);
 		
 	}
 

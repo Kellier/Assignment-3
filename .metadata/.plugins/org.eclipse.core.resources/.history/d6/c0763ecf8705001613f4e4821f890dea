@@ -77,8 +77,8 @@ public class Shooter extends Obj
 	    papplet.stroke(40, 232, 23);
 	    papplet.fill(40, 232, 23);
 	    papplet.textSize(20);
-	    papplet.text("Health: " + health, 330, 20);
-	    papplet.text("Score: " + score, 520, 20);
+	    papplet.text("Health: " + health, 250, 20);
+	    papplet.text("Score: " + score, 500, 20);
 		
 	}
 
