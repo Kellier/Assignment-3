@@ -1,0 +1,100 @@
+package assignment;
+
+//Importing various libraries
+import java.util.Random;
+
+import processing.core.*;
+
+//Abstract class to store variables for all the games
+public abstract class Obj 
+{
+	//PApplet variables and PVectors for all games and screens
+	PApplet papplet;
+	PVector pos;
+	PVector move;
+	//Snake variables
+	boolean correct;
+	int[] snakex;
+	int[] snakey;
+	int snx, sny;
+	int forx, fory;
+	int foodx, foody;
+	int points;
+	int snakel;
+	int cx, cy;
+	float fdx, fdy;
+	//Widely used variable for speed of objects
+	float speed = 5.0f;
+	//Pong variable
+	float wallx, wally;
+	//Space invaders variables
+	float enemyx, enemyy;
+	float speedx, speedy;
+	float recta;
+	float w, h;
+    float W;
+    float halfw;
+    //Variables to keep track of scores and health/lives in all games
+    int time = 12;
+    int score;
+    int health;
+    int lives;
+	
+    //Randomly generated numbers for various methods
+	Random r = new Random();
+	int i1 = r.nextInt(330 - 0) + 0;
+	int i2 = r.nextInt(700 - 200) + 200;
+	
+	//Constructor
+	public Obj()
+	{
+		
+		
+	}
+	
+	//Constructor to declare all the variables values
+	public Obj(PApplet papplet, float x, float y) 
+	{
+		this.papplet = papplet;
+		pos = new PVector(x, y);
+		move = new PVector(0, -1);
+	    this.correct = true;
+	    this.snakex = new int[100];
+	    this.snakey = new int[100];
+	    this.snakel = 1;
+	    points = 0;
+	    this.cx = papplet.width / 2;
+	    this.cy = papplet.height / 2;
+	    this.snx = cx - 5;
+	    this.sny = cy - 5;
+	    this.foodx = -1;
+	    this.foody = -1;
+	    this.forx = 0;
+	    this.fory = 0;
+		this.recta = 970.0f;
+	    this.w = 10;
+	    this.h = 100;
+	    this.W = W;
+	    this.halfw = W * 0.5f;
+	    this.speedx = 8;
+	    this.speedy = 8;
+	    this.wallx = 350;
+	    this.wally = 450;
+	    this.fdx = i1;
+	    this.fdy = i2;
+	    this.enemyx = 0;
+	    this.enemyy = 0;
+	}
+	
+	//Abstract methods to be used in all instances of the abstract class
+	abstract void position();
+	abstract void thing();
+	abstract void newgame();
+
+	public static void main(String[] args) 
+	{
+		String[] a = {"MAIN"};
+		PApplet.runSketch(a, new Menu());
+
+	}
+}

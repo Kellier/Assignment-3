@@ -109,7 +109,7 @@ public class Pong extends Obj
 	    //Draw the paddle object
 	    papplet.stroke(245, 250, 20);
 	    papplet.fill(245, 250, 20);
-	    papplet.rect(970, papplet.mouseY, w, h);
+	    papplet.rect(wallx, papplet.mouseY, w, h);
 		
 	    //Display text
 	    papplet.fill(7, 29, 103);
