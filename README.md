@@ -9,22 +9,22 @@ In finishing this project i have managed to apply control P5 and three games to 
 
 The HomeScreen
 
-https://cloud.githubusercontent.com/assets/15383888/14611595/f2b227fc-058a-11e6-8afe-7d7ee876b9b7.png
+![homescreen](https://cloud.githubusercontent.com/assets/15383888/14611595/f2b227fc-058a-11e6-8afe-7d7ee876b9b7.png)
 
 The Instructions 
 
-https://cloud.githubusercontent.com/assets/15383888/14611617/0fd31030-058b-11e6-96f8-9cac5d82d5e0.png
+![instructions](https://cloud.githubusercontent.com/assets/15383888/14611617/0fd31030-058b-11e6-96f8-9cac5d82d5e0.png)
 
 Pong
 
-https://cloud.githubusercontent.com/assets/15383888/14611611/09d668c6-058b-11e6-83a6-3598c5586eff.png
+![pong](https://cloud.githubusercontent.com/assets/15383888/14611611/09d668c6-058b-11e6-83a6-3598c5586eff.png)
 
 Snake
 
-https://cloud.githubusercontent.com/assets/15383888/14611601/fb20b016-058a-11e6-97fc-0ede8d060148.png
+![snake](https://cloud.githubusercontent.com/assets/15383888/14611601/fb20b016-058a-11e6-97fc-0ede8d060148.png)
 
 Space Invaders
 
-https://cloud.githubusercontent.com/assets/15383888/14611608/0617245a-058b-11e6-83bf-a0eb29c3b1c9.png
+![spaceinvaders](https://cloud.githubusercontent.com/assets/15383888/14611608/0617245a-058b-11e6-83bf-a0eb29c3b1c9.png)
 
-![snake](https://cloud.githubusercontent.com/assets/15383888/14611601/fb20b016-058a-11e6-97fc-0ede8d060148.png)
+
