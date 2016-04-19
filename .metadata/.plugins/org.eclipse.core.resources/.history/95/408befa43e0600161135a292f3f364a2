@@ -8,10 +8,7 @@ public class Shooter extends Obj
 {
 	//Fields
 	PApplet papplet;
-	char left;
-	char right;
-	char shoot;
-	char newg;
+	char left, right, shoot, newg;
 	
 	//Constructor to declare the buttons for the movement of the shooter using keys, starting point of the shooter and firing the bullets
 	public Shooter(PApplet papplet, float startx, float starty, char left, char right, char shoot, char newg) 

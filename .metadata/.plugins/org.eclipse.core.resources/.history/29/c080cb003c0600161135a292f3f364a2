@@ -29,10 +29,10 @@ public class Enemy extends Obj
 	    if(time > 30)
 	    {
 	      //Call the enemy_bullet class inside the enemy class
-	      Enemy_Bullet bullet = new Enemy_Bullet();
-	      bullet.pos.x = pos.x;
-	      bullet.pos.y = pos.y;
-	      Menu.objes.add(bullet);
+	      Enemy_Bullet bullets = new Enemy_Bullet();
+	      bullets.pos.x = pos.x;
+	      bullets.pos.y = pos.y;
+	      Menu.objes.add(bullets);
 	      time = 0;
 	    }
 
