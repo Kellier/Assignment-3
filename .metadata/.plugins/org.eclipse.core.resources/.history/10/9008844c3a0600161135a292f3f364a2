@@ -8,8 +8,6 @@ public class H_Pong extends Obj
 {
 	//Fields
 	float br = 10.0f;
-	float speedx = 8.0f;
-	float speedy = 8.0f;
 	PApplet papplet;
 	
 	//Constructor to declare the starting point of the object

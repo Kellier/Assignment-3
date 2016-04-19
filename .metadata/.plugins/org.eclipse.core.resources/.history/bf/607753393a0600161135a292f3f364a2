@@ -29,6 +29,7 @@ public abstract class Obj
 	float wallx, wally;
 	//Space invaders variables
 	float enemyx, enemyy;
+	float speedx, speedy;
 	float recta;
 	float w, h;
     float W;
@@ -75,6 +76,8 @@ public abstract class Obj
 	    this.h = 100;
 	    this.W = W;
 	    this.halfw = W * 0.5f;
+	    this.speedx = 8;
+	    this.speedy = 8;
 	    this.wallx = 350;
 	    this.wally = 450;
 	    this.fdx = i1;

@@ -50,7 +50,7 @@ public class Pong extends Obj
 	    }
 	    
 	    //Statement so ball bounces off the walls
-	    if(pos.x > papplet.width)
+	    if(pos.x > 646)
 	    {
 	      speedx = -speedx;
 	    }
@@ -60,7 +60,7 @@ public class Pong extends Obj
 	    if(pos.x > papplet.width)
 	    {
 	      lives --;
-	      reset();
+	      //reset();
 	    }
 	    
 	    //Statement that decrements the Player lives and resets the ball position
@@ -116,7 +116,7 @@ public class Pong extends Obj
 	    papplet.rect(recta, papplet.mouseY, w, h);
 		
 	    //Display text
-	    papplet.fill(245, 250, 20);
+	    papplet.fill(7, 29, 103);
 	    papplet.textSize(30);
 	    papplet.text("Player:  " + lives, 600, 40);
 		

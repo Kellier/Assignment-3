@@ -27,8 +27,8 @@ class Snake extends Obj
     {
       if(snakey[1] != snakey[0] - 10)
       {
-        speedy = -10;
-        speedx = 0;
+        fory = -10;
+        forx = 0;
       }
     }
     
@@ -36,8 +36,8 @@ class Snake extends Obj
     {
       if(snakey[1] != snakey[0] + 10)
       {
-        speedy = 10;
-        speedx = 0;
+        fory = 10;
+        forx = 0;
       }
     }
     
@@ -45,8 +45,8 @@ class Snake extends Obj
     {
       if(snakex[1] != snakex[0] - 10)
       {
-        speedy = 0;
-        speedx = -10;
+        fory = 0;
+        forx = -10;
       }
     }
     
@@ -54,8 +54,8 @@ class Snake extends Obj
     {
       if(snakex[1] != snakex[0] + 10)
       {
-        speedy = 0;
-        speedx = 10;
+        fory = 0;
+        forx = 10;
       }
     }
     
@@ -89,11 +89,12 @@ class Snake extends Obj
   void thing()
   {
     fill(58, 209, 36);
+    noStroke();
     for(int i = 0; i < snakel; i++)
     {
       int x = snakex[i];
       int y = snakey[i];
-      rect(x - 5, y - 5, w, h);
+      rect(x - 5, y - 5, w, w);
     }
     
     for(int j = snakel; j > 0; j--)

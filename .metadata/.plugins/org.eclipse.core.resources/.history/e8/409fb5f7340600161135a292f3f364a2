@@ -8,7 +8,6 @@ public class Snake extends Obj
 {
 	//Fields
 	PApplet papplet;
-	int H = 10;
 	char up;
 	char left;
 	char right;
@@ -78,8 +77,8 @@ public class Snake extends Obj
 	      newgame();
 	    }
 	    
-	    snx += forx;
-	    sny += fory;
+	    snx += speedx;
+	    sny += speedy;
 	    
 	    snakex[0] = (int)snx;
 	    snakey[0] = (int)sny;
@@ -106,12 +105,13 @@ public class Snake extends Obj
 	void thing() 
 	{
 		//Draw snake
+		papplet.noStroke();
 	    papplet.fill(58, 209, 36);
 	    for(int i = 0; i < snakel; i++)
 	    {
 	      int x = snakex[i];
 	      int y = snakey[i];
-	      papplet.rect(x - 5, y - 5, w, H);
+	      papplet.rect(x - 5, y - 5, w, w);
 	    }
 	    
 	    for(int j = snakel; j > 0; j--)

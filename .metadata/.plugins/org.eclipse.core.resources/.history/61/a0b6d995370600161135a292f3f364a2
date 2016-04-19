@@ -279,6 +279,8 @@ public class Menu extends PApplet
 		{
 			background(0);
 			
+			frameRate(8);
+			
 			myFont = loadFont("Arcade1.vlw");
 		    
 			//For loop calls pong methods
@@ -287,7 +289,7 @@ public class Menu extends PApplet
 				Obj go = obje.get(i);
 				go.position();
 				go.thing();
-				//go.newgame();
+				go.newgame();
 			}
 			
 			//Call method to alter lives of player
@@ -326,7 +328,7 @@ public class Menu extends PApplet
 				Obj go = objes.get(i);
 				go.position();
 				go.thing();
-				//go.newgame();
+				go.newgame();
 			}
 			
 			//Call method to alter health of the shooter

@@ -16,13 +16,14 @@ class Food extends Obj
   {
     if(keys[reset])
     {
-      reset();
+      newgame();
     }
   }
   
   void thing()
   {
     fill(250, 30, 10);
+    noStroke();
     
     while(correct)
     {
@@ -45,7 +46,7 @@ class Food extends Obj
         }
       }
     }
-    rect(foodx - 5, foody - 5, w, h);
+    rect(foodx - 5, foody - 5, w, w);
   }
   
   void newgame()
