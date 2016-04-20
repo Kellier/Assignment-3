@@ -323,7 +323,7 @@ void bulletCollision1()
         Obj other = objes.get(j);
         if(other instanceof Enemy_Bullet)
         {
-          if(go.pos.dist(other.pos) < go.halfw/2 + other.enemyy/2 + other.enemyx/2)
+          if(go.pos.dist(other.pos) < go.halfw + other.enemyy + other.enemyx)
           {
             ((Hit) other).applyTo((Shooter)go);
             objes.remove(other);

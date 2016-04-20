@@ -30,8 +30,8 @@ public class Enemy extends Obj
 	    {
 	      //Call the enemy_bullet class inside the enemy class
 	      Enemy_Bullet bullet = new Enemy_Bullet();
-	      this.pos.x = pos.x;
-	      this.pos.y = pos.y;
+	      bullet.pos.x = pos.x;
+	      bullet.pos.y = pos.y;
 	      Menu.objes.add(bullet);
 	      time = 0;
 	    }

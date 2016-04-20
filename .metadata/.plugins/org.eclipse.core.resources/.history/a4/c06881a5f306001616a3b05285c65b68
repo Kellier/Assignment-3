@@ -351,7 +351,7 @@ public class Menu extends PApplet
 	        Obj other = objes.get(j);
 	        if(other instanceof Enemy_Bullet)
 	        {
-	          if(go.pos.dist(other.pos) < go.halfw + (other.enemyx + other.enemyy))
+	          if(go.pos.dist(other.pos) < go.halfw + other.enemyy + other.enemyx)
 	          {
 	            ((Hit) other).applyTo((Shooter)go);
 	            objes.remove(other);

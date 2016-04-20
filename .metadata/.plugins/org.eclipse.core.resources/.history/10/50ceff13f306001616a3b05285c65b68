@@ -50,8 +50,8 @@ public class Shooter extends Obj
 	    {
 	    	//Call bullet class inside of shooter class
 	        Bullet bullet = new Bullet();
-	        this.pos.x = pos.x;
-	        this.pos.y = pos.y;
+	        bullet.pos.x = pos.x;
+	        bullet.pos.y = pos.y;
 	        Menu.objes.add(bullet);
 	        time = 0;
 	    }
