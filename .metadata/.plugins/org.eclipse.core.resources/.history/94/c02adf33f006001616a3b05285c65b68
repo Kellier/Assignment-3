@@ -31,7 +31,6 @@ public abstract class Obj
 	float enemyx, enemyy;
 	float recta;
 	float w, h;
-	float half;
     float halfw;
     //Variables to keep track of scores and health/lives in all games
     int time = 12;
@@ -58,8 +57,7 @@ public abstract class Obj
 		pos = new PVector(x, y);
 		move = new PVector(0, -1);
 		this.w = 10;
-		this.half = 50;
-		this.halfw = half * 0.5f;
+		this.halfw = w * 0.5f;
 	    this.correct = true;
 	    this.snakex = new int[100];
 	    this.snakey = new int[100];

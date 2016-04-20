@@ -2,8 +2,7 @@ abstract class Obj
 {
   PVector pos;
   PVector move;
-  float speedx, speedy;
-  float speed;
+  float speed = 5.0f;;
   float wallx, wally;
   color c;
   float w, h;
@@ -39,8 +38,6 @@ abstract class Obj
     this.halfw = w * 0.5f;
     this.w = 10;
     this.h = 100;
-    this.speedx = 8;
-    this.speedy = 8;
     this.wallx = 350;
     this.wally = 450;
     this.foodx = -1;

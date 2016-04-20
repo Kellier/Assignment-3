@@ -3,6 +3,8 @@ class Ball extends Obj
 {
   //Fields for ball
   float br = 10;
+  float speedx = 8;
+  float speedy = 8;
   char reset;
   char newg;
   //Constructor with no return type
@@ -28,7 +30,6 @@ class Ball extends Obj
     if((pos.x >= recta - br) && (pos.x <= (recta - br) + w) && (pos.y >= mouseY ))
     {
       speedx = -speedx;
-      c = color(7, 29, 103);
     }
     
     //If statement so ball bounces off the walls
@@ -79,8 +80,8 @@ class Ball extends Obj
   {
     pushMatrix();
     translate(pos.x, pos.y);
-    stroke(c);
-    fill(c);
+    stroke(255);
+    fill(255);
     ellipse(0, 0, br * 2, br * 2);
     popMatrix();
     

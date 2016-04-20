@@ -64,8 +64,8 @@ class Snake extends Obj
       newgame();
     }
     
-    snx += speedx;
-    sny += speedy;
+    snx += forx;
+    sny += fory;
     
     snakex[0] = (int)snx;
     snakey[0] = (int)sny;

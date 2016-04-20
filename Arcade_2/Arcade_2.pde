@@ -259,7 +259,7 @@ void draw()
       Obj go = obje.get(i);
       go.position();
       go.thing();
-      go.newgame();
+      //go.newgame();
     }
     
     //Call method to alter lives of player
@@ -298,7 +298,7 @@ void draw()
       Obj go = objes.get(i);
       go.position();
       go.thing();
-      go.newgame();
+      //go.newgame();
     }
     
     //Call method to alter health of the shooter

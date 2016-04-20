@@ -2,6 +2,7 @@ class H_Space extends Obj
 {
   float a = 833;
   float b = 650;
+  float speedx = 7.0f;
   
   H_Space()
   {

@@ -12,7 +12,7 @@ class Bullet extends Obj implements EnemyHit
   
   void thing()
   {
-    stroke(c);
+    stroke(40, 232, 23);
     pushMatrix();
     translate(pos.x, pos.y);
     line(0, -5, 0, 5);

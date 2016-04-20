@@ -1,6 +1,8 @@
 class H_Pong extends Obj
 {
   float br = 10;
+  float speedx = 8;
+  float speedy = 8;
   
   H_Pong()
   {

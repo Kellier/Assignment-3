@@ -58,7 +58,7 @@ public abstract class Obj
 		pos = new PVector(x, y);
 		move = new PVector(0, -1);
 		this.w = 10;
-		this.half = 50;
+		this.half = 30;
 		this.halfw = half * 0.5f;
 	    this.correct = true;
 	    this.snakex = new int[100];
