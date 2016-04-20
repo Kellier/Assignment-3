@@ -30,12 +30,12 @@ class Enemy extends Obj
       time = 0;
     }
     
-    if(pos.x > width)
+    if(pos.x > width - 15)
     {
       speedx = -speedx;
     }
     
-    if(pos.x < 0)
+    if(pos.x < 15)
     {
       speedx = - speedx;
     }

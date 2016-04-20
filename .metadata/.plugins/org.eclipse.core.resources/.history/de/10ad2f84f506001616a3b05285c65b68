@@ -37,13 +37,13 @@ public class Enemy extends Obj
 	    }
 
 	    //Error Check
-	    if(pos.x > papplet.width - 15)
+	    if(pos.x > papplet.width)
 	    {
 	      speedx = -speedx;
 	    }
 	    
 	    //Error Check
-	    if(pos.x < 15)
+	    if(pos.x < 0)
 	    {
 	      speedx = - speedx;
 	    }
