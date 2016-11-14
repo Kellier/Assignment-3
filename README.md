@@ -5,7 +5,7 @@ For this Assignment i will use Eclipse in Processing or Proclipsing. I will foll
 
 In the project i will aim to use all that i've learned i.e. Polymorphism, Inheritance, Abstract classes, Interfaces etc. This will test my knowledge in the processing language but will definitely help me progress through various problems. I aim to develop each game as a separate program. Once the games are designed i will design the menu and finally will aim to have a joystick as the controller to really add a little extra.
 
-In finishing this project i have managed to apply control P5 and three games to Eclipse. I have completed Pong, Snake and my own twist on Space Invaders. Implementing Processing in Eclipse has proved tricky and allowing keyboard movement has proved harder than first htought. All games run in Processing but struggle in Eclipse. I didn't have time to apply ProControl before the project deadline but will continue to work on it after submission. Below you can see my project ScreenShots
+In finishing this project i have managed to apply control P5 and three games to Eclipse. I have completed Pong, Snake and my own twist on Space Invaders. Implementing Processing in Eclipse has proved tricky and allowing keyboard movement has proved harder than first htought. All games run in Processing but struggle in Eclipse. I didn't have time to apply ProControl before the project deadline but will continue to work on it after submission. To run this you simply cone my git repo using a commandline. Then run the code in eclpise and you can try out my Arcade game. Below you can see my project ScreenShots:
 
 The HomeScreen
 
